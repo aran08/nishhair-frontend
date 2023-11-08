@@ -151,8 +151,8 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="flex w-[93%] gap-8">
+        <div className="md:flex flex-col justify-center">
+          <div className="flex w-[93%] gap-8 ml-12">
             <img src="/images/about6.webp" alt="" />
             <div className="w-[50%]">
               <img src="/images/about7.webp" alt="" />
@@ -178,8 +178,8 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="w-[50%] flex justify-center mt-10 mb-32">
-        <div className="flex flex-col w-[86.5%] ">
+        <div className="w-[50%] flex md:flex-col justify-center mt-10 mb-32 ml-12">
+        <div className="flex flex-col w-[95%] ">
           <p className="text-[36px] font-semibold">Nish Hair Extensions</p>
           <p className=" text-[17px] py-5">
             While the Nish Hair range has grown and expanded into creating all

@@ -15,7 +15,7 @@ const Look = () => {
         <img
           src="/images/look.webp"
           alt=""
-          className="h-[150px] 2xl:h-[555px] w-11/12 2xl:w-[88%]"
+          className="h-[150px] md:h-[270px] 2xl:h-[555px] w-11/12 2xl:w-[88%]"
         />
       </div>
     </div>

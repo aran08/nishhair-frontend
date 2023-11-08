@@ -6,13 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import Footer from './layout/footer/Footer'
 import Navbar from './layout/navbar/Navbar';
 
+// for reudx application
+import { Provider } from 'react-redux'
+import store from './redux/store/store';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Navbar />
     <App />
-    <Footer/>
-  </React.StrictMode>
+    {/* <Footer/> */}
+  </Provider>,   
 );
 
 reportWebVitals();

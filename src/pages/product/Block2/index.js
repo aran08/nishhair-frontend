@@ -1,8 +1,6 @@
-import { useState } from "react";
-import Slider from "react-slick";
+import React, { useState } from 'react'
 
-const Justin = () => {
-
+function Block2() {
   const imageData = [
     {
       id: 1,
@@ -77,59 +75,8 @@ const Justin = () => {
       pr: "Rs. 675.00",
     },
   ];
-
-
-  const settings = {
-    // dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    touchMove: true,
-    swipe: true,
-
-    // nextArrow,
-    // prevArrow,
-    // arrows: true,
-
-    responsive: [
-      {
-        breakpoint: 1440,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          // infinite: true,
-          // dots: true
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          // infinite: true,
-          // dots: true
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          infinite: true,
-          // initialSlide: 2
-        },
-      },
-      {
-        breakpoint: 426,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
+  
+  
   const [identity,setIdentity] = useState(null)
 
   const handleShowDiv = (i) => {
@@ -141,25 +88,22 @@ const Justin = () => {
   };
 
   return (
-    <div className="w-full flex justify-center gap-4 items-center border-b-[1px] my-10">
-      
-      <div className="w-11/12">
-      <p className="text-4xl font-semibold ml-3 mb-6">JUST IN</p>
-        <Slider {...settings}>
-        {imageData.map((item,i) => (
+    <div className='w-full h-full '>
+      <div className="flex flex-wrap h-max gap-5 ml-5">
+          {imageData.map((item,i) => (
             <div 
             key={item.id}
            
-                 className=" h-max overflow-hidden  px-3">
+                 className=" w-[350px] h-max overflow-hidden">
               <div
                onMouseEnter={() => handleShowDiv(i)}
                onMouseLeave={handleHideDiv}
-                className="relative overflow-hidden"
+                className="relative border border-black overflow-hidden"
                 
               >
                 
-                 <div className='h-max overflow-y-hidden'>
-                    <img src={item.ima} alt="" className='w-full' />
+                 <div className='w-full h-max overflow-y-hidden'>
+                    <img src={item.ima} alt="" className='bg-cover' />
                   </div>
               
 
@@ -185,40 +129,9 @@ const Justin = () => {
               </div>
             </div>
           ))}
-        </Slider>
-      </div>
+      </div> 
     </div>
-  );
-};
+  )
+}
 
-export default Justin;
-/* 
-1
-            <div>
-              <img src="/images/quickview2.webp" alt="" />
-            </div>
-            <div>
-              <img src="/images/quickview3.webp" alt="" />
-            </div>
-2
-            <div>
-              <img src="/images/quickview2.2.webp" alt="" />
-            </div>
-            <div>
-              <img src="/images/quickview2.3.webp" alt="" />
-            </div>
-3
-            <div>
-              <img src="/images/quickview3.2.webp" alt="" />
-            </div>
-4
-            <div>
-              <img src="/images/quickview4.2.webp" alt="" />
-            </div>
-            <div>
-              <img src="/images/quickview4.3.webp" alt="" />
-            </div>
-            
-5           
-            <h1 className="text-3xl font-medium py-6"> JUST IN</h1>
-*/
+export default Block2

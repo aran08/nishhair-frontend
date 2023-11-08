@@ -2,11 +2,11 @@ import React from "react";
 
 ;const Nish = () => {
   return (
-    <div className="md:flex py-24 md:ml-[90px] px-3">
-      <div className=" md:w-[50%]">
+    <div className="lg:flex py-24 lg:ml-[90px] px-3">
+      <div className="w-full lg:w-[50%]">
         <img src="/images/nish.webp" alt="" />
       </div>
-      <div className="md:w-[50%] flex justify-center items-center md:pl-16">
+      <div className="lg:w-[50%] flex justify-center items-center md:pl-16">
         <div className="">
           <h1 className="font-semibold text-3xl md:-ml-5 pb-5 pt-5 pl-6">Nish Hair Promise</h1>
           <div className="flex justify-center  w-[80%] font-semibold text-[17px] flex-col pl-6">
