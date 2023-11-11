@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 function Block2() {
   const imageData = [
@@ -75,63 +75,53 @@ function Block2() {
       pr: "Rs. 675.00",
     },
   ];
-  
-  
-  const [identity,setIdentity] = useState(null)
+
+  const [identity, setIdentity] = useState(null);
 
   const handleShowDiv = (i) => {
-    setIdentity(i+1)
-    
+    setIdentity(i + 1);
   };
   const handleHideDiv = (i) => {
-    setIdentity(null)
+    setIdentity(null);
   };
 
   return (
-    <div className='w-full h-full '>
+    <div className="w-full h-full ">
       <div className="flex flex-wrap h-max gap-5 ml-5">
-          {imageData.map((item,i) => (
-            <div 
-            key={item.id}
-           
-                 className=" w-[350px] h-max overflow-hidden">
-              <div
-               onMouseEnter={() => handleShowDiv(i)}
-               onMouseLeave={handleHideDiv}
-                className="relative border border-black overflow-hidden"
-                
-              >
-                
-                 <div className='w-full h-max overflow-y-hidden'>
-                    <img src={item.ima} alt="" className='bg-cover' />
-                  </div>
-              
-
-                <div
-                  className={`absolute bottom-0 z-[999] duration-500  transition-transform left-0 bg-[#8E9491] 
-                   w-full  justify-center flex items-center  text-white font-semibold text-xs h-10 
-                  ${
-                     item.id !== identity ? 
-                     "translate-y-12"
-                      : "translate-y-0 " 
-                  }
-                  `}
-                >
-                  {" "}
-                  QUICK VIEW{" "}
-                </div>
+        {imageData.map((item, i) => (
+          <div key={item.id} className=" w-[350px] h-max overflow-hidden">
+            <div
+              onMouseEnter={() => handleShowDiv(i)}
+              onMouseLeave={handleHideDiv}
+              className="relative border border-black overflow-hidden"
+            >
+              <div className="w-full h-max overflow-y-hidden">
+                <a href="/product/details">
+                  <img src={item.ima} alt="" className="bg-cover" />
+                </a>
               </div>
-              <div>
-                <p className="text-center font-semibold ">{item.msg}</p>
-                <p className="text-[#14B4B0] text-center font-semibold">
-                  {item.pr}
-                </p>
+
+              <div
+                className={`absolute bottom-0 z-[999] duration-500  transition-transform left-0 bg-[#8E9491] 
+                   w-full  justify-center flex items-center  text-white font-semibold text-xs h-10 
+                  ${item.id !== identity ? "translate-y-12" : "translate-y-0 "}
+                  `}
+              >
+                {" "}
+                QUICK VIEW{" "}
               </div>
             </div>
-          ))}
-      </div> 
+            <div>
+              <p className="text-center font-semibold ">{item.msg}</p>
+              <p className="text-[#14B4B0] text-center font-semibold">
+                {item.pr}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Block2
+export default Block2;

@@ -1,58 +1,65 @@
-// import { createSlice } from "@reduxjs/toolkit";
-// import { authApi } from "../../mooks/auth";
+import { createSlice } from "@reduxjs/toolkit";
+import { authApi } from "../../mooks/auth";
 
-// const initialState = {
-//     user:{}
-// }
+const initialState = {
+  user: {},
+};
 
-// const slice = createSlice({
-//     name:"auth",
-//     initialState,
-//     reducers:{
-//         getUser(state,action){
+const slice = createSlice({
+  name: "auth",
+  initialState,
+  reducers: {
+    getUser(state, action){
+      console.log("Action Payload",action.payload)
+      if(action.payload){
+        state.user = action.payload
+      }
+    },
+  },
+});
 
-//         }
-//     }
-// })
+export const { reducer } = slice;
 
-// export const { reducer } = slice;
+export const getUser = () => async (dispatch) => {
+    try {
+      const result = await authApi.getUser();
+      if(result){
+        const res = await dispatch(slice.actions.getUser(result.data));
+        return res;
+      }
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-// export const getUser = () => async (dispatch) => {
+export const register = (data) => async (dispatch) => {
+  try {
+    const result = await authApi.register(data);
 
-// }
+    if (result) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-// export const register = (data) => (dispatch) => {
-//     try{
-//         const result =  authApi.register(data);
+export const login = (data) => async (dispatch) => {
+  try {
+    const result = await authApi.login(data);
 
-//         if(result){
-//             localStorage.setItem("accessToken",result &&  result.data && result.data.token)
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-
-//     }catch(error){
-//         console.log(error)
-//     }
-// }
-
-// export const login = (data) => async(dispatch) => {
-//     try{
-//         const result = await authApi.login(data);
-
-//         if(result){
-//             console.log(result)
-//             console.log(result.data.token)
-//             localStorage.setItem("accessToken",result &&  result.data && result.data.token)
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-
-//     }catch(error){
-//         console.log(error)
-//     }
-// }
+    if (result) {
+      localStorage.setItem(
+        "accessToken",
+        result && result.data && result.data.token
+      );
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};

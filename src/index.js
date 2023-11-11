@@ -15,7 +15,7 @@ root.render(
   <Provider store={store}>
     <Navbar />
     <App />
-    {/* <Footer/> */}
+    <Footer/>
   </Provider>,   
 );
 

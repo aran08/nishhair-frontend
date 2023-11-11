@@ -2,19 +2,37 @@ import { BiSearch } from "react-icons/bi";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { BsList } from "react-icons/bs";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Drawer } from "@mui/material";
-
-import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Cart from "../../pages/cart/Cart";
 import { useScrollTop } from "./Usescrolltop";
 import Shopdrawer from "../../pages/shop/Shopdrawer";
-// import Shopdrawer from "../../pages/shop/Shopdrawer";
-
+import {useDispatch, useSelector} from "react-redux"
+import { getUser } from "../../redux/slice/auth";
+// import { useLocation, useParams} from "react-router-dom";
 const Navbar = () => {
+ 
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.auth)
+  console.log(user.user.email)
+
+  let isLoggedIn = false;
+
+  const loginState = () => {
+    isLoggedIn = !isLoggedIn;
+  };
+
+  const handleLogin = () => {
+    loginState();
+  };
+
+  const handleLogout = () => {
+    loginState();
+  };
+
   const [showDrawer, setShowDrawer] = useState(false);
 
   const [showShop, setShop] = useState(false);
@@ -27,13 +45,26 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   const scroll = useScrollTop();
+
+  const handleGetUser = async()=>{
+    const result = await dispatch(getUser());
+    if(result){
+      console.log("user/me Api calling suceesfully")
+    }
+  }
+
+  useEffect(()=>{
+    handleGetUser();
+  },[])
+
+
   return (
     <nav
       className={`h-24 flex justify-center items-center text-black hover:bg-white top-0 fixed z-[99999] w-full border-black ${
         scroll ? "bg-white shadow-md" : " border-b-[1px]"
       }`}
+     
     >
       <div className="w-11/12 flex justify-between items-center text-center my-0 py-0 z-50 group h-full space-x-10">
         <div className="sm:w-[55%] w-[80%] flex justify-between items-center group-hover:text-[#2dd4bf] h-full">
@@ -49,12 +80,11 @@ const Navbar = () => {
               SHOP
             </div>
             <Drawer
-              
               anchor="top"
               open={showShop}
               // onMouseLeave = {() => setShowDrawer(false)}
             >
-              <Shopdrawer className="pt-28"/>
+              <Shopdrawer className="pt-28" />
             </Drawer>
 
             <a href="/helpme" className="hover:underline hover:text-black">
@@ -106,8 +136,18 @@ const Navbar = () => {
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
-            >
-              <CgProfile className="text-black text-2xl gap-0 z-[999999]" />
+            > 
+            {
+              user.user.email ? (
+                <div className="uppercase rounded-full w-10 h-10 bg-red-400 text-center flex justify-center items-center ">
+                  {user.user.email.slice(0,1)}
+                </div>
+              ):(
+                <div>
+                    <CgProfile className="text-black text-2xl gap-0 z-[999999]" />
+                </div>
+              )
+            }
             </div>
             <Menu
               id="basic-menu"
@@ -117,11 +157,18 @@ const Navbar = () => {
               MenuListProps={{
                 "aria-labelledby": "basic-button",
               }}
+              sx={{ zIndex: 99999 }}
             >
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>
-                <a href="login">Login</a>
+              <MenuItem>
+                {!!user.user ? (
+                  <button onClick={handleLogout}>Logout</button>
+                ) : (
+                  <button onClick={handleLogin}>
+                    <a href="/login">Login</a>
+                  </button>
+                )}
               </MenuItem>
             </Menu>
           </div>
