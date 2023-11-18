@@ -63,14 +63,14 @@ function Index() {
             <source src="/videos/intro1.mp4" />
           </video>
           <div className="w-full flex justify-center items-center">
-          <div className="absolute bottom-[33%] md:left-[10%] lg:left-[30%] xl:left-[20%]">
+          <div className="absolute bottom-[33%] md:left-[10%] lg:left-[30%] xl:left-[40%]">
             <p className="text-center font-medium text-sm text-white mb-6">
               <a href="/" className="mr-3">
                 N I S H
               </a>
               <a href="/">H A I R</a>
             </p>
-            <p className="text-6xl font-semibold text-center text-white ">
+            <p className="text-[36px] font-semibold text-center text-white ">
               Get Celebrity Like Hair
             </p>
             <p className="text-center font-medium text-sm text-white mt-6">
@@ -83,7 +83,7 @@ function Index() {
           <video loop autoPlay className="w-[100%]">
             <source src="/videos/intro2.mp4" />
           </video>
-          <div className="absolute bottom-[30%] md:left-[10%]  lg:left-[25%] xl:left-[20%]">
+          <div className="absolute bottom-[30%] md:left-[10%]  lg:left-[25%] xl:left-[30%]">
             <ul>
               <li
                 href="/"
@@ -96,7 +96,7 @@ function Index() {
               </li>
               <li
                 href="/"
-                className="text-6xl font-semibold text-center text-white "
+                className="text-[60px] font-semibold text-center text-white "
               >
                 100% HUMAN HAIR
               </li>
@@ -107,7 +107,7 @@ function Index() {
                 MADE WITH LOVE
               </li>
             </ul>
-            <div className="flex mt-10">
+            <div className="flex mt-10 justify-center">
               <div className="">
                 <button type="button" className="btn1 btn2">
                   SHOP NOW

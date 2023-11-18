@@ -9,6 +9,10 @@ import Reviews from "./pages/riview/Reviews";
 import Product from "./pages/product";
 import Details from "./pages/product/Details";
 import Register from "./pages/auth/signup/Register";
+import Profile from "./pages/profile/Profile";
+import Info from "./pages/cart/Info";
+import Shipping from "./pages/cart/Shipping";
+
 
 export default function App() {
   return (
@@ -23,6 +27,9 @@ export default function App() {
         <Route exact  path="/product" element={<Product/>}/>
         <Route exact  path="/product/details" element={<Details/>}/>
         <Route exact  path="/register" element={<Register/>}/>
+        <Route exact  path="/profile" element={<Profile/>}/>
+        <Route exact  path="/information" element={<Info/>}/>
+        <Route exact  path="/shipping" element={<Shipping/>}/>
         <Route exact  path="*" element={<PageNotfound/>}/>
      </Routes>
     </BrowserRouter>

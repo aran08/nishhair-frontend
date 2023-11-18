@@ -22,7 +22,6 @@ const Register = () => {
       if(values){
         const result = dispatch(register(values))
         if(result){
-          console.log("hello ")
           return navigate("/login")
         }
       }
@@ -98,8 +97,8 @@ const Register = () => {
             By continuing, you agree to Flipkart's{" "}
             <a href="/" className="text-blue-400">
               Terms of Use
-            </a>{" "}
-            and{" "}
+            </a>
+            and
             <a href="/" className="text-blue-400">
               Privacy Policy.
             </a>

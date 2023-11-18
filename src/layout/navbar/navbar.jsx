@@ -10,33 +10,20 @@ import Cart from "../../pages/cart/Cart";
 import { useScrollTop } from "./Usescrolltop";
 import Shopdrawer from "../../pages/shop/Shopdrawer";
 import {useDispatch, useSelector} from "react-redux"
-import { getUser } from "../../redux/slice/auth";
+import { getUser} from "../../redux/slice/auth";
 // import { useLocation, useParams} from "react-router-dom";
+
 const Navbar = () => {
- 
   const [show, setShow] = useState(false);
   const dispatch = useDispatch()
   const user = useSelector((state) => state.auth)
-  console.log(user.user.email)
-
-  let isLoggedIn = false;
-
-  const loginState = () => {
-    isLoggedIn = !isLoggedIn;
-  };
-
-  const handleLogin = () => {
-    loginState();
-  };
-
-  const handleLogout = () => {
-    loginState();
+ 
+  const handleLogout = async () => {
+     await localStorage.removeItem("accessToken")
   };
 
   const [showDrawer, setShowDrawer] = useState(false);
-
   const [showShop, setShop] = useState(false);
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -56,7 +43,7 @@ const Navbar = () => {
 
   useEffect(()=>{
     handleGetUser();
-  },[])
+  }) //}",[ ]")  this one is removed from this line as getting error
 
 
   return (
@@ -111,14 +98,13 @@ const Navbar = () => {
           <Drawer anchor="left" open={show} onClose={() => setShow(false)}>
             <div className="w-[300px]">
               <h1>Home</h1>
-              <h1>Home</h1>
-              <h1>Home</h1>
-              <h1>Home</h1>
-              <h1>Home</h1>
-              <h1>Home</h1>
+              <h1>SHOP</h1>
+              <h1>HELP ME</h1>
+              <h1>ABOUT US</h1>
+              <h1>BOOK A TRIAL</h1>
+              <h1>RIVIEW</h1>
             </div>
           </Drawer>
-
           <div>
             <img
               src="/images/logo.webp"
@@ -159,15 +145,20 @@ const Navbar = () => {
               }}
               sx={{ zIndex: 99999 }}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <a href="/profile">Profile</a>
+                </MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem>
-                {!!user.user ? (
+                { user.user.email ? (
                   <button onClick={handleLogout}>Logout</button>
                 ) : (
-                  <button onClick={handleLogin}>
-                    <a href="/login">Login</a>
-                  </button>
+                  <a href="/login">
+                    
+                    <button onClick={handleLogout}>
+                      Login
+                    </button>
+                    </a>
                 )}
               </MenuItem>
             </Menu>

@@ -35,7 +35,7 @@ class AuthApi {
 
   async getUser(){
     try {
-      console.log("hello Mocks")
+       
         const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/userapp/user/me`,{
             method:"get",
             headers: {

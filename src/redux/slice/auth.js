@@ -46,8 +46,23 @@ export const register = (data) => async (dispatch) => {
   }
 };
 
-export const login = (data) => async (dispatch) => {
+export const info = (data) => async (dispatch) => {
   try {
+    const result = await info(data);
+
+    if (result) {
+      console.log(result);
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const login = (data) => async (dispatch) => {
+    try {
     const result = await authApi.login(data);
 
     if (result) {
@@ -59,7 +74,24 @@ export const login = (data) => async (dispatch) => {
     } else {
       return false;
     }
-  } catch (error) {
+
+    } catch (error) 
+    {
+      console.log(error);
+    }
+};
+
+export const logout = () => async (dispatch) => {
+  try {
+
+      localStorage.removeItem(
+        "accessToken",
+      );
+
+      return true;
+
+  } catch (error) 
+  {
     console.log(error);
   }
 };

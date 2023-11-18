@@ -21,7 +21,7 @@ const Lower = () => {
   ];
   return (
     <div className="w-[800px] md:w-full flex flex-nowrap justify-center items-center md:py-20 ">
-      <div className="md:w-[60%] flex flex-nowrap justify-between overflow-scroll">
+      <div className="md:w-[60%] flex flex-nowrap justify-between">
         {imageData.map((item) => (
           <div key={item.id} className="w-[200px]">
             <img src={item.src} alt="kuchbhi" className=" h-[200px] md:h-[200px] md:w-[200px] mt-3 mx-2" />
