@@ -1,5 +1,5 @@
 import Ticker from "react-ticker";;
-import Ticker from 'react-awesome-ticker'
+// import Ticker from 'react-awesome-ticker'
 export default function Titlebar() {
   return (
     <Ticker className="py-6 border border-black h-[90px]">

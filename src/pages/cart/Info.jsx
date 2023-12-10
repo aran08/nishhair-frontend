@@ -4,8 +4,9 @@ import { info } from "../../redux/slice/auth";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
+import Conditions from "../../components/content/Conditions";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+// const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const initialValues = {
   name: "",
@@ -182,13 +183,7 @@ const Info = () => {
                     <a href="/shipping">Continue to Shipping</a>
                   </button>
                 </div>
-                <div className="flex gap-5 text-xs border-t-2 py-5 text-blue-600 underline underline-offset-1 font-semibold">
-                  <a href="/">Refund policy</a>
-                  <a href="/">Shipping policy</a>
-                  <a href="/">Privecy policy</a>
-                  <a href="/">Terms of services</a>
-                  <a href="/">Contact information</a>
-                </div>
+                <Conditions/>
               </div>
             </div>
           </div>

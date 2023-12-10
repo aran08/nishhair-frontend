@@ -12,6 +12,15 @@ import Register from "./pages/auth/signup/Register";
 import Profile from "./pages/profile/Profile";
 import Info from "./pages/cart/Info";
 import Shipping from "./pages/cart/Shipping";
+import Step2 from "./pages/payment/Step2";
+import Paymenttop from "./components/content/Paymenttop";
+import Conditions from "./components/content/Conditions";
+import Rozarpay from "./pages/payment/Rozarpay";
+import Upi from "./components/content/Upi";
+import Card from "./components/content/Card";
+import Success from "./status/Success";
+import Failure from "./status/Failure";
+import Order from "./pages/order/Order";
 
 
 export default function App() {
@@ -30,6 +39,15 @@ export default function App() {
         <Route exact  path="/profile" element={<Profile/>}/>
         <Route exact  path="/information" element={<Info/>}/>
         <Route exact  path="/shipping" element={<Shipping/>}/>
+        <Route exact  path="/payment" element={<Step2/>}/>
+        <Route exact  path="/top" element={<Paymenttop/>}/>
+        <Route exact  path="/condition" element={<Conditions/>}/>
+        <Route exact  path="/rozorpay" element={<Rozarpay/>}/>
+        <Route exact  path="/upi" element={<Upi/>}/>
+        <Route exact  path="/card" element={<Card/>}/>
+        <Route exact  path="/success" element={<Success/>}/>
+        <Route exact  path="/failure" element={<Failure/>}/>
+        <Route exact  path="/order" element={<Order/>}/>
         <Route exact  path="*" element={<PageNotfound/>}/>
      </Routes>
     </BrowserRouter>

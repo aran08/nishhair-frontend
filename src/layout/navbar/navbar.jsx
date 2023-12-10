@@ -59,7 +59,7 @@ const Navbar = () => {
             <a href="/PageNot" className="hover:underline hover:text-black">
               HOME
             </a>
-
+            
             <div
               onMouseEnter={() => setShop(!showShop)}
               onMouseLeave={() => setShop(!showShop)}
@@ -69,9 +69,12 @@ const Navbar = () => {
             <Drawer
               anchor="top"
               open={showShop}
-              // onMouseLeave = {() => setShowDrawer(false)}
+              onMouseLeave = {() => setShowDrawer(false)}
             >
-              <Shopdrawer className="pt-28" />
+              <Shopdrawer className=""  
+              // onMouseEnter={() => setShop(!showShop)}
+              onMouseLeave={() => setShop(!showShop)}
+              />
             </Drawer>
 
             <a href="/helpme" className="hover:underline hover:text-black">

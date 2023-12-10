@@ -3,7 +3,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../../../redux/slice/auth";
 import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 const initialValues = {
