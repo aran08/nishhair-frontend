@@ -11,6 +11,8 @@ const Cart = () => {
         </div>
       </div>
       <div className="flex-col flex justify-center items-center h-[90vh]">
+        {/* {`${ }`} */}
+        
         <MdOutlineRemoveShoppingCart className="h-[100px] w-[100px]" />
         <p className="text-[17px] text-black py-5">
           Your cart is currently empty.

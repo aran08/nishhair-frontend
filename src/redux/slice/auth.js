@@ -49,7 +49,6 @@ export const register = (data) => async (dispatch) => {
 export const info = (data) => async (dispatch) => {
   try {
     const result = await info(data);
-
     if (result) {
       console.log(result);
       return true;

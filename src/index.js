@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Footer from './layout/footer/Footer'
+// import Footer from './layout/footer/Footer'
 import Navbar from './layout/navbar/Navbar';
 
 import { Provider } from 'react-redux'
@@ -15,7 +15,7 @@ root.render(
   <Provider store={store}>
     <Navbar />
     <App />
-    <Footer/>
+    {/* <Footer/> */}
     <ToastContainer/>
   </Provider>,   
 );

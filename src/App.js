@@ -21,6 +21,7 @@ import Card from "./components/content/Card";
 import Success from "./status/Success";
 import Failure from "./status/Failure";
 import Order from "./pages/order/Order";
+import Cart from "./pages/cart/Cart";
 
 
 export default function App() {
@@ -34,7 +35,8 @@ export default function App() {
         <Route exact  path="/bookatrial" element={<Trial/>}/>
         <Route exact  path="/reviews" element={<Reviews/>}/>
         <Route exact  path="/product" element={<Product/>}/>
-        <Route exact  path="/product/details" element={<Details/>}/>
+        <Route exact  path="/product/details/:id" element={<Details/>}/>
+        <Route exact  path="/cart" element={<Cart/>}/>
         <Route exact  path="/register" element={<Register/>}/>
         <Route exact  path="/profile" element={<Profile/>}/>
         <Route exact  path="/information" element={<Info/>}/>

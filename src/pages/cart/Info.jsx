@@ -30,6 +30,8 @@ const Info = () => {
     },
   });
 
+
+
   return (
     <div className="flex justify-end w-full">
       <div className="flex w-[88%]">
@@ -59,7 +61,7 @@ const Info = () => {
                   value={values.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className="border-3 rounded-md border-blue-600 w-full h-12"
+                  className="border-3 rounded-md border-blue-600 w-full h-12 pl-2"
                 />
                 <div className="flex gap-2 items-center">
                   <Checkbox />

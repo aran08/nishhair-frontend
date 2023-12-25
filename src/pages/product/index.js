@@ -12,7 +12,7 @@ function Product() {
         <Upperblock />
       </div>
       <div className="min-h-screen h-full flex w-full relative">
-        <div className={`w-[22%] border-2 border-black max-h-screen h-screen ${scrolled ? "h-full z-20":null} `}>
+        <div className={`w-[22%] max-h-screen h-screen ${scrolled ? "h-full z-20":null} `}>
           <Block1 />
         </div>
         <div className="w-[78%] ">

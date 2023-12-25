@@ -35,7 +35,6 @@ class AuthApi {
 
   async getUser(){
     try {
-       
         const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/userapp/user/me`,{
             method:"get",
             headers: {
@@ -48,7 +47,7 @@ class AuthApi {
         else 
           return false;
     } catch (error) {
-        console.log(error)
+        console.log("error inside mocks",error)
     }
   }
 }

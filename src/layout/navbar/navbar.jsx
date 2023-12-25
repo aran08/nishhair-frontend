@@ -43,7 +43,7 @@ const Navbar = () => {
 
   useEffect(()=>{
     handleGetUser();
-  }) //}",[ ]")  this one is removed from this line as getting error
+  },[]) //}",[ ]")  this one is removed from this line as getting error
 
 
   return (
