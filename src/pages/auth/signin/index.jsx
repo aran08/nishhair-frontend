@@ -9,7 +9,6 @@ import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  // const notify = () => { 
   //   toast("Default Notification !");
 
   //   toast.success("Success Notification !", {

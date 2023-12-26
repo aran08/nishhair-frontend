@@ -7,7 +7,6 @@ class AuthApi {
         `${process.env.REACT_APP_BASE_URL}/userapp/auth/register`,
         data
       );
-      console.log(response);
       if (response) {
         return true;
       }
@@ -23,9 +22,7 @@ class AuthApi {
         `${process.env.REACT_APP_BASE_URL}/userapp/auth/login`,
         data
       );
-       
       if (response) {
-        
         return response.data;
       }
     } catch (error) {
@@ -41,7 +38,6 @@ class AuthApi {
                 "Authorization" : `Bearer ${localStorage.getItem("accessToken")}`
             }
         });
-        console.log("mocks ",response)
         if(response.data.status==='SUCCESS')
         return response.data;
         else 

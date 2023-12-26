@@ -11,7 +11,6 @@ import { useScrollTop } from "./Usescrolltop";
 import Shopdrawer from "../../pages/shop/Shopdrawer";
 import {useDispatch, useSelector} from "react-redux"
 import { getUser} from "../../redux/slice/auth";
-// import { useLocation, useParams} from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -36,19 +35,17 @@ const Navbar = () => {
 
   const handleGetUser = async()=>{
     const result = await dispatch(getUser());
-    if(result){
-      console.log("user/me Api calling suceesfully")
-    }
+    return result;
   }
 
   useEffect(()=>{
     handleGetUser();
-  },[]) //}",[ ]")  this one is removed from this line as getting error
+  },[]) 
 
 
   return (
     <nav
-      className={`h-24 flex justify-center items-center text-black hover:bg-white top-0 fixed z-[99999] w-full border-black ${
+      className={`h-24 flex justify-center items-center text-black hover:bg-white top-0 fixed z-[999] w-full border-black ${
         scroll ? "bg-white shadow-md" : " border-b-[1px]"
       }`}
      

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import {AiFillFacebook} from "react-icons/ai";
 import {BsTwitter,BsPinterest} from "react-icons/bs"
 import { GrFormSubtract } from "react-icons/gr";
@@ -6,39 +6,15 @@ import { MdAdd } from "react-icons/md";
 import {useDispatch} from "react-redux"
 import { useParams } from "react-router-dom";
 import { getProduct } from "../../redux/slice/product";
+import { toast } from 'react-toastify';
+import { createData } from "../../redux/slice/cart";
 
 const Details = () => {
-  // const imageData = [
-  //   {
-  //     id: 1,
-  //     ima: "/images/detail1.1.webp",
-  //     msg: "Adjustable Ring – Cuban Link – Tarnish Free | Nish Hair X Evil Eye Jewel",
-  //     pr: "Rs. 1,099.00",
-  //   },
-  //   {
-  //     id: 2,
-  //     ima: "/images/detail1.2.webp",
-  //     msg: "ARATA CLEANSING SHAMPOO",
-  //     pr: "Rs. 299.00",
-  //   },
-  //   {
-  //     id: 3,
-  //     ima: "/images/detail1.3.webp",
-  //     msg: "Arata Nourishing Conditioner",
-  //     pr: "Rs. 675.00",
-  //   },
-  //   {
-  //     id: 4,
-  //     ima: "/images/detail1.4.webp",
-  //     msg: "Arata Hydrating Shampoo",
-  //     pr: "Rs. 675.00",
-  //   },
-  // ];
+  
   const params = useParams();
   const dispatch = useDispatch()
   const {id} = params;
-  console.log(id);
-  const [product,setProduct]= useState()
+  const [product,setProduct]= useState();
   const [count, setCount] = useState(1);
   function handleAdd () {
         setCount(count+1);
@@ -50,24 +26,30 @@ const Details = () => {
     }
   }
 
-  const handleGetProducts =async () => {
+  const handleAddDetails =async () => {
     const res = await dispatch(getProduct(id))
-
-    console.log("id of the product",id);
     if(res){
-      console.log("res",res)
       setProduct(res)
     }else{
       return false
     }
   }
+
   useEffect(()=>{
-    handleGetProducts()
+    handleAddDetails()
   },[])
 
- function handleCart () {
-    
- }
+  const handleAddData =async () => {
+    const res = await dispatch(createData(id))
+    console.log(res)
+    if(res){
+      toast.success("Added Successfully !", {
+        position: toast.POSITION.BOTTOM_LEFT
+      });
+    }else{
+      return false
+    }
+  }
 
   return (
     <div className="w-full flex justify-center">
@@ -100,7 +82,7 @@ const Details = () => {
               {count}
               <MdAdd onClick={handleAdd}/>
               </div>
-              <button className="w-[350px] h-[50px] border border-[#0FB2AE] rounded-3xl text-sm text-[#0FB2AE] font-semibold" onClick={handleCart}>ADD TO CART</button>
+              <button className="w-[350px] h-[50px] border border-[#0FB2AE] rounded-3xl text-sm text-[#0FB2AE] font-semibold" onClick={handleAddData}>ADD TO CART</button>
             </div>
             <div className="">
               <button className="w-11/12 h-[50px] rounded-3xl bg-[#0FB2AE] my-3 text-sm text-white font-semibold">BUY IT NOW</button>

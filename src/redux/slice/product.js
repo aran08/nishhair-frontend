@@ -9,7 +9,6 @@ const slice = createSlice({
     initialState,
     reducers: {
       getAllProduct(state, action){
-        console.log("action payload",action.payload)
         if(action.payload){
           state.products = action.payload.data
         }
@@ -22,7 +21,6 @@ export const { reducer } = slice;
 export const getAllProduct = () => async (dispatch) => {
     try {
       const result = await productApi.getAllProduct();
-      console.log("result",result)
       if(result){
         const res = await dispatch(slice.actions.getAllProduct(result.data));
         return res;
@@ -35,7 +33,6 @@ export const getAllProduct = () => async (dispatch) => {
 export const getProduct = (id) => async(dispatch) => {
      try {
         const result = await productApi.getProduct(id);
-        console.log("gettingproduct by id",result);
       if(result){
         return result.data;
       }

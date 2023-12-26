@@ -90,6 +90,7 @@ function Block2() {
   };
 
   const {products} = useSelector((state)=> state.products);
+  
   const handleGetAllProducts =async () => {
     const res = await dispatch(getAllProduct())
     if(res){

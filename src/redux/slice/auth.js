@@ -10,7 +10,6 @@ const slice = createSlice({
   initialState,
   reducers: {
     getUser(state, action){
-      console.log("Action Payload",action.payload)
       if(action.payload){
         state.user = action.payload
       }
@@ -32,10 +31,9 @@ export const getUser = () => async (dispatch) => {
     }
 };
 
-export const register = (data) => async (dispatch) => {
+export const register = (data) => async () => {
   try {
     const result = await authApi.register(data);
-
     if (result) {
       return true;
     } else {
@@ -50,7 +48,6 @@ export const info = (data) => async (dispatch) => {
   try {
     const result = await info(data);
     if (result) {
-      console.log(result);
       return true;
     } else {
       return false;
@@ -63,7 +60,6 @@ export const info = (data) => async (dispatch) => {
 export const login = (data) => async (dispatch) => {
     try {
     const result = await authApi.login(data);
-
     if (result) {
       localStorage.setItem(
         "accessToken",
@@ -73,7 +69,6 @@ export const login = (data) => async (dispatch) => {
     } else {
       return false;
     }
-
     } catch (error) 
     {
       console.log(error);
@@ -82,13 +77,10 @@ export const login = (data) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   try {
-
       localStorage.removeItem(
         "accessToken",
       );
-
       return true;
-
   } catch (error) 
   {
     console.log(error);

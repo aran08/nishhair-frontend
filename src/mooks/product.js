@@ -27,7 +27,6 @@ class ProductApi {
                 `${process.env.REACT_APP_BASE_URL}/userapp/product/list`,
                 data, 
               );
-              console.log(response);
               if (response) {
                 return response.data;
               }
@@ -64,12 +63,11 @@ class ProductApi {
                 `${process.env.REACT_APP_BASE_URL}/userapp/product/get/${id}`,
                 data,
               );
-              console.log(response);
               if (response) {
                 return response.data;
               }
         } catch (error) {
-            console.log(error);
+            console.log("error inside getproduct mocks",error);
         }
     }
 }
