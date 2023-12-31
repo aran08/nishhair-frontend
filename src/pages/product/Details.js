@@ -8,9 +8,28 @@ import { useParams } from "react-router-dom";
 import { getProduct } from "../../redux/slice/product";
 import { toast } from 'react-toastify';
 import { createData } from "../../redux/slice/cart";
+import { createSlice } from "@reduxjs/toolkit";
+import { getUser } from "../../redux/slice/auth";
+// import { authApi } from "../../mooks/auth";
+
+const initialState = {
+  cart: [],
+};
+const slice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    getcartData(state, action){
+      if(action.payload){
+        state.products = action.payload.data
+      }
+    },
+  },
+});
+export const { reducer } = slice;
 
 const Details = () => {
-  
+ 
   const params = useParams();
   const dispatch = useDispatch()
   const {id} = params;
@@ -25,6 +44,8 @@ const Details = () => {
     setCount(count-1);
     }
   }
+  
+ 
 
   const handleAddDetails =async () => {
     const res = await dispatch(getProduct(id))
@@ -40,7 +61,18 @@ const Details = () => {
   },[])
 
   const handleAddData =async () => {
-    const res = await dispatch(createData(id))
+    const user = await dispatch(getUser(id));
+    console.log("user",user)
+    let data={
+      "userId":user?.payload?.id,
+      "products":[
+          {
+              "productId": id,
+              "qty": 1
+          }
+       ]
+  }
+    const res = await dispatch(createData(data))
     console.log(res)
     if(res){
       toast.success("Added Successfully !", {
@@ -77,7 +109,7 @@ const Details = () => {
             <div className="flex gap-3">
               <div className="w-[90px] h-[50px] border border-[#0FB2AE] rounded-3xl flex justify-between items-center px-2">
               <GrFormSubtract onClick={handleSub}
-               className={`${count === 1 ? "text-gray-100":""}`}
+               className={`${count === 1}`}
               />
               {count}
               <MdAdd onClick={handleAdd}/>

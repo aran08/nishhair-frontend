@@ -3,6 +3,7 @@ import axios from "axios";
 class CartApi {
 
  async createData(data) {
+    console.log("cart mocks data",data)
     try {
         const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/userapp/cart/create`,
         data,
@@ -20,19 +21,19 @@ class CartApi {
     }
  }
 
- async getData() {
+ async getcartData() {
     try {
         let data ={
             "query":{},
             "options": {
               "collation": "",
               "sort": {"name":1},
-              "populate": "products",
+              "populate": "products.productId",
               "projection": "",
               "lean": false,
               "leanWithId": true,
               "page": 1,
-              "limit": 1,
+              "limit": 9,
               "pagination": true,
               "useEstimatedCount": false,
               "useCustomCountFn": false,
@@ -52,7 +53,7 @@ class CartApi {
           });
         return response;
     } catch (error) {
-        console.log("error inside mocks this.getData",error);
+        console.log(error);
     }
  }
 

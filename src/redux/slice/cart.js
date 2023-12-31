@@ -31,9 +31,9 @@ export const { reducer } = slice;
     }
   };
 
-  export const getData = () => async (dispatch) => {
+  export const getcartData = () => async (dispatch) => {
     try {
-      const result = await cartApi.getData();
+      const result = await cartApi.getcartData();
       if(result){
         return result?.data;
       }
