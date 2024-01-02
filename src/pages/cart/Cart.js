@@ -1,6 +1,6 @@
 import { RxCross1 } from "react-icons/rx";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
-import { getcartData } from "../../redux/slice/cart";
+import { deletecartData, getcartData } from "../../redux/slice/cart";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
@@ -10,7 +10,6 @@ import { MdAdd } from "react-icons/md";
 const Cart = () => {
   const dispatch = useDispatch();
   const [cartData, setData] = useState();
-  console.log("cartData abc", cartData);
   const handleAllData = async () => {
     const res = await dispatch(getcartData());
     if (res) {
@@ -33,6 +32,14 @@ const Cart = () => {
   useEffect(() => {
     handleAllData();
   }, []);
+
+  const handleDelete = (id) => {
+      try {
+       dispatch(deletecartData(id));
+      } catch (error) {
+        console.log(error)
+      }
+  }
 
   return (
     <div className="w-[480px] z-[999999]">
@@ -69,12 +76,11 @@ const Cart = () => {
                         <div className="border-2 border-black flex gap-2 items-center rounded-2xl px-2 py-1">
                         <GrFormSubtract
                           onClick={handleSub}
-                          className={count === 1}
                         />
-                        {count} 
+                        {data.qty}
                         <MdAdd onClick={handleAdd} />
                         </div>
-                        <RiDeleteBin5Line className="text-[#E93636]" />
+                        <RiDeleteBin5Line className="text-[#E93636]" onClick={() => handleDelete(item.id)}/>
                       </div>
                     </div>
                     <div className="h-20 w-24 flex justify-center items-center font-medium text-[#0FB2AE]">

@@ -31,7 +31,7 @@ export const { reducer } = slice;
     }
   };
 
-  export const getcartData = () => async (dispatch) => {
+  export const getcartData = () => async () => {
     try {
       const result = await cartApi.getcartData();
       if(result){
@@ -40,4 +40,18 @@ export const { reducer } = slice;
     } catch (error) {
         console.log(error);
     }
+};
+
+export const deletecartData = (id) => async (dispatch) => {
+  try {
+    const result = await cartApi.deletecartData(id);
+    console.log("result inside slice",result)
+    if(result){
+      await dispatch(slice.actions.deletecartData(result))
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.log(error);
+  }
 };

@@ -47,7 +47,7 @@ const Details = () => {
   
  
 
-  const handleAddDetails =async () => {
+  const handleAddDetails = async () => {
     const res = await dispatch(getProduct(id))
     if(res){
       setProduct(res)
@@ -60,9 +60,8 @@ const Details = () => {
     handleAddDetails()
   },[])
 
-  const handleAddData =async () => {
+  const handleAddData = async () => {
     const user = await dispatch(getUser(id));
-    console.log("user",user)
     let data={
       "userId":user?.payload?.id,
       "products":[
