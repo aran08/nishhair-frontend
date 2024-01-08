@@ -1,7 +1,3 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getcartData } from "../../redux/slice/cart";
-
 const ProductOrderpage = ({cartData}) => {
 
 
