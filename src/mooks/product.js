@@ -67,7 +67,7 @@ class ProductApi {
                 return response.data;
               }
         } catch (error) {
-            console.log("error inside getproduct mocks",error);
+            console.log(error);
         }
     }
 }

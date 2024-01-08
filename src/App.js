@@ -10,7 +10,6 @@ import Product from "./pages/product";
 import Details from "./pages/product/Details";
 import Register from "./pages/auth/signup/Register";
 import Profile from "./pages/profile/Profile";
-import Info from "./pages/cart/Info";
 import Shipping from "./pages/cart/Shipping";
 import Step2 from "./pages/payment/Step2";
 import Paymenttop from "./components/content/Paymenttop";
@@ -22,6 +21,7 @@ import Success from "./status/Success";
 import Failure from "./status/Failure";
 import Order from "./pages/order/Order";
 import Cart from "./pages/cart/Cart";
+import Checkbox from "./pages/order/Ordertab";
 
 
 export default function App() {
@@ -39,7 +39,7 @@ export default function App() {
         <Route exact  path="/cart" element={<Cart/>}/>
         <Route exact  path="/register" element={<Register/>}/>
         <Route exact  path="/profile" element={<Profile/>}/>
-        <Route exact  path="/information" element={<Info/>}/>
+        <Route exact  path="/checkbox" element={<Checkbox/>}/>
         <Route exact  path="/shipping" element={<Shipping/>}/>
         <Route exact  path="/payment" element={<Step2/>}/>
         <Route exact  path="/top" element={<Paymenttop/>}/>

@@ -48,19 +48,19 @@ const About = () => {
               <p className=" text-sm font-medium">Shop</p>
             </div>
             <p className="pb-2">
-              <a href="/Help" className="text-sm font-medium pb-3.5">
+              <p href="/Help" className="text-sm font-medium">
                 Help Me Choose
-              </a>
+              </p>
             </p>
             <p className="pb-2">
-              <a href="/About Us" className="text-sm font-medium pb-3.5">
+              <p href="/About Us" className="text-sm font-medium">
                 About Us
-              </a>
+              </p>
             </p>
             <p className="pb-2">
-              <a href="/Contact" className="text-sm font-medium pb-3.5">
+              <p href="/Contact" className="text-sm font-medium">
                 Contact Us
-              </a>
+              </p>
             </p>
             <p className="pb-2">
               <a href="/Reviews" className="text-sm font-medium">
@@ -129,7 +129,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-end pr-14 pb-10 ">
+        <div className="flex justify-start pl-12 pb-10 pt-3">
           <img src="/images/pay.webp" alt="x" className="h-[25px] w-[40px] rounded " />
         </div>
         <p className="pb-24 text-xs font-medium ml-12">
@@ -146,8 +146,7 @@ const About = () => {
         <div className="pb-24 fixed bottom-3 pr-9">
           <HiArrowSmUp className="bg-white w-[35px] h-[35px] rounded-3xl"/>
         </div>
-        <div className="flex w-full justify-between p-5 fixed bottom-3">
-          <div className="h-[30px] w-[60px] bg-black">hii</div>
+        <div className="flex w-full justify-end p-5 fixed bottom-3">
           <div>
             <img
               src="/images/chat.jpg"

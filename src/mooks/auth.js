@@ -43,7 +43,7 @@ class AuthApi {
         else 
           return false;
     } catch (error) {
-        console.log("error inside mocks",error)
+        console.log(error)
     }
   }
 }

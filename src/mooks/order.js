@@ -1,10 +1,10 @@
 import axios from "axios";
 
-class CartApi {
+class OrderApi {
 
- async createData(data) {
+  async createOrder () {
     try {
-        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/userapp/cart/create`,
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/userapp/order/create`,
         data,
         {
             method:"post",
@@ -16,11 +16,11 @@ class CartApi {
             return response?.data;
         }
     } catch (error) {
-        console.log(error);
+        
     }
- }
+  };
 
- async getcartData(page=1,limit=2,filters={}) {
+  async getOrder(page=1,limit=2,filters={}) {
     filters.isDeleted=false;
     let data ={
         "query":filters,
@@ -57,38 +57,6 @@ class CartApi {
         console.log(error);
     }
  }
+};
 
- async deletecartData(id) {
-  
-        const response = await axios.delete(`${process.env.REACT_APP_BASE_URL}/userapp/cart/soft-delete/${id}`,
-        {
-            method:"delete",
-            headers: {
-                "Authorization" : `Bearer ${localStorage.getItem("accessToken")}`
-            }
-        })
-        if(response.data.status==='SUCCESS')
-            return response.data;
-        else    
-            return false;
-        
- }
-
-//  async updateCart(data) {
-//     console.log("data inside mocks",data)
-//     const response = await axios.put(`${process.env.REACT_APP_BASE_URL}/userapp/cart/update/${data.id}`,
-//     {
-//     method:"put",
-//     headers: {
-//         "Authorization" : `Bearer ${localStorage.getItem("accessToken")}`
-//     }
-//     });
-//     console.log("response inside mocks",response)
-//     if(response.data.status==='SUCCESS')
-//         return response.data;
-//     else    
-//         return false;
-//  }
-}
-
-export const cartApi = new CartApi();
+export const OrderApi = new OrderApi();

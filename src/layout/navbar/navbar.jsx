@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`h-24 flex justify-center items-center text-black hover:bg-white top-0 fixed z-[999] w-full border-black ${
+      className={`h-24 flex justify-center items-center text-black hover:bg-white top-0 fixed z-[999] w-full hover:border-black ${
         scroll ? "bg-white shadow-md" : " border-b-[1px]"
       }`}
      
@@ -114,7 +114,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex text-2xl  gap-3 group-hover:text-black">
+        <div className="flex text-2xl  gap-3 group-hover:text-black items-center">
           <div>
             <div
               id="basic-button"

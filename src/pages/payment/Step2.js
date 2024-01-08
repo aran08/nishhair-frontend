@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Paymenttop from "../../components/content/Paymenttop";
 import { Checkbox } from "@mui/material";
 import { LiaLessThanSolid } from "react-icons/lia";
-// import Conditions from "../../components/content/Conditions";
+import { createPayment } from "../../redux/slice/payment";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getUser } from "../../redux/slice/auth";
+
+
 
 const Step2 = () => {
+  const params = useParams();
+  const dispatch = useDispatch()
+  const {id} = params;
+
   const ImageData = [
     {
       id: 1,
@@ -23,6 +32,33 @@ const Step2 = () => {
       src: "/images/upi.svg",
     },
   ];
+
+  const handleGetUser = async () => {
+    const user = await dispatch(getUser(id));
+    let data={
+      "userId":user?.payload?.id,
+      "products":[
+          {
+              "productId": id,
+              "qty": 1,
+              // "mrp": {data.products.mrp}
+          }
+       ]
+  }
+  }
+
+  useEffect(()=>{
+    handleGetUser()
+  },[])
+
+  const handleCreatePayment = async () => {
+    const res = await dispatch(createPayment())
+    if(res){
+      return true
+    }else{
+      return false
+    }
+  }
 
   return (
     <div>
@@ -107,12 +143,12 @@ const Step2 = () => {
               </div>
             </div>
             <div className="flex justify-between my-5">
-              <div className="flex items-center text-blue-600 gap-2">
+              <a href="/shipping" className="flex items-center text-blue-600 gap-2">
                 <LiaLessThanSolid />
                 <p>Return to shipping</p>
-              </div>
+              </a>
               <button className="h-16 w-28 bg-blue-600 rounded-md">
-                <a href="/rozorpay">Pay now</a>
+                <h2 onClick={handleCreatePayment}>Pay now</h2>
               </button>
             </div>
           </div>
