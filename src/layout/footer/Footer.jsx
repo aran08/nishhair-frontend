@@ -129,7 +129,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-start pl-12 pb-10 pt-3">
+        <div className="flex justify-start pl-6 md:pl-12 pb-10 pt-3">
           <img src="/images/pay.webp" alt="x" className="h-[25px] w-[40px] rounded " />
         </div>
         <p className="pb-24 text-xs font-medium ml-12">

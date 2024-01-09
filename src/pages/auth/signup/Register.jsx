@@ -29,26 +29,26 @@ const Register = () => {
   });
 
   return (
-    <div className="flex justify-center item-center py-6 bg-slate-300 mt-24">
-      <div className="flex w-[900px] h-[600px] bg-[#0FB2AE] ">
+    <div className="flex justify-center item-center md:py-6 bg-slate-300 ">
+      <div className="flex md:w-[900px] h-screen md:h-[600px] bg-[#0FB2AE] ">
         <div className="px-6">
-          <div className="pl-6">
-            <p className="text-[34px] font-bold pt-20">
+          <div className="md:pl-6">
+            <p className="md:text-[34px] text-[25px] font-bold pt-20">
               Looks like you're new here!
             </p>
-            <p className="text-xl font-medium text-white pt-6">
+            <p className="md:text-xl text-sm font-medium text-white pt-6">
               Sign up with your mobile number to get started
             </p>
           </div>
 
-          <div className="flex items-center h-[300px] justify-center">
+          <div className="flex items-center h-[300px] md:justify-center justify-end ">
             <img src="/images/bottom.avif" alt="" />
           </div>
         </div>
-        <div className="w-[750px] bg-slate-200">
-          
+        <div className="w-[750px] bg-slate-200 flax justify-center">
+          <div className="h-screen">
           <div  onSubmit={handleSubmit}>
-          <div className="px-10 flex-col items-center flex h-[200px]">
+          <div className="px-10 flex-col items-center flex md:h-[200px]">
             <div className="">
               <label htmlFor="name">Enter Name</label>
               <div className="pt-3 underline underline-offset-3">
@@ -94,7 +94,7 @@ const Register = () => {
           </div>
           </div>
           <p className="text-xs font-medium pl-10 pt-6">
-            By continuing, you agree to Flipkart's{" "}
+            By continuing, you agree to Nish-Hair{" "}
             <a href="/" className="text-blue-400">
               Terms of Use
             </a>
@@ -122,6 +122,7 @@ const Register = () => {
                 Existing User? Log in
               </a>
             </button>
+          </div>
           </div>
         </div>
       </div>

@@ -39,16 +39,16 @@ const Cart = () => {
     handleAllData();
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = (item) => {
     try {
-      dispatch(deletecartData(id));
+      dispatch(deletecartData(item));
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="w-[480px] z-[999999]">
+    <div className=" w-[380px] lg:w-[480px] z-[999999]">
       <div className="flex justify-center">
         <div className="border-b-[1px] flex justify-between items-center h-[70px] w-11/12 font-medium">
           <p>CART</p>
@@ -91,7 +91,7 @@ const Cart = () => {
                             </div>
                             <RiDeleteBin5Line
                               className="text-[#E93636]"
-                              onClick={() => handleDelete(data.id)}
+                              onClick={() => handleDelete(item.id)}
                             />
                           </div>
                         </div>
