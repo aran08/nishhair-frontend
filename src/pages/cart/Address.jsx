@@ -5,7 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Conditions from "../../components/content/Conditions";
 import { FaLessThan } from "react-icons/fa6";
 
-export default function Address({orderDetail,setOrderDetail}) {
+export default function Address({orderDetail,setOrderDetail,setValue}) {
 
   const formik = useFormik({
     initialValues: {
@@ -36,7 +36,9 @@ export default function Address({orderDetail,setOrderDetail}) {
       number: Yup.number().min(10, 'Must be 10 number').required("Required"),
     }),
     onSubmit: (values) => {
-        setOrderDetail(values)
+      console.log("values for payment",values);
+        setOrderDetail(values);
+        setValue("2");
       },
   });
 
@@ -232,10 +234,12 @@ export default function Address({orderDetail,setOrderDetail}) {
                 Return to Cart
               </a>
               <div className="w-[180px] h-[60px] rounded text-sm font-semibold bg-blue-600 text-white flex items-center justify-center">
-                <button type="submit"> Continue to Shipping </button>
+                <button type="submit" 
+                // onSubmit={()=> setValue("2")}
+                > Continue to Shipping </button>
               </div>
             </div>
-            <Conditions />
+            <Conditions/>
           </div>
         </div>
       </div>

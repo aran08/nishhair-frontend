@@ -6,6 +6,7 @@ import { reducer as createReducer } from "../slice/cart"
 export const rootReducer = combineReducers({
     auth:authReducer,
     products:productsReducer,
-    cart:createReducer
+    cart:createReducer,
+    order:createReducer
     // payment:paymentReducer
 })

@@ -11,11 +11,11 @@ function Product() {
       <div className="w-full">
         <Upperblock />
       </div>
-      <div className="min-h-screen h-full flex w-full relative">
-        <div className={`w-[22%] max-h-screen h-screen ${scrolled ? "h-full z-20":null} `}>
+      <div className="min-h-screen h-full md:flex md:w-full relative">
+        <div className={`md:w-[22%] w-full md:max-h-screen md:h-screen ${scrolled ? "h-full z-20":null} `}>
           <Block1 />
         </div>
-        <div className="w-[78%] ">
+        <div className="md:w-[78%] w-full">
           <Block2 />
         </div>
       </div>

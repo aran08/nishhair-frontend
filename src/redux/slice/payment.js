@@ -14,18 +14,18 @@ const slice = createSlice({
 
 export const { reducer } = slice;
 
-export const createPayment = (data) => async () => {
-  try {
-    const result = await paymentApi.createPayment(data);
-    if (result) {
-      return true;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
+// export const createPayment = (data) => async () => {
+//   try {
+//     const result = await paymentApi.createPayment(data);
+//     if (result) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 export const getPayment = () => async () => {
   try {

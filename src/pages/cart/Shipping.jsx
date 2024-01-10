@@ -2,38 +2,39 @@ import Conditions from "../../components/content/Conditions";
 import Payment from "../payment/Payment";
 import { LiaLessThanSolid } from "react-icons/lia";
 import { useDispatch } from "react-redux";
-import { createPayment } from "../../redux/slice/payment";
+import { createOrder} from "../../redux/slice/order";
+import { useNavigate } from "react-router-dom";
 
-const Shipping = ({ orderDetail,cartData, setOrderDetail }) => {
+const Shipping = ({ orderDetail,cartData,setValue }) => {
+  const  navigate = useNavigate()
+  console.log(cartData);
   const dispatch = useDispatch();
-  const handleSubmit = () => {};
+  const  handleSubmit = () => {};
+  let productArray = []
+  for(let i of cartData && cartData?.data){
+      productArray.push({
+        "productId" : i.products[0]?.productId,
+        "qty":i.products[0]?.id.quantity || 1,
+      })
+  }
+  let data = {
+    userId: cartData && cartData.data && cartData.data[0] && cartData.data[0]?.userId ,
+    products: productArray,
+    address: {
+      locality: orderDetail?.Address,
+      city: orderDetail?.City,
+      state: orderDetail?.State,
+      country: orderDetail?.Country,
+      zipcode: orderDetail?.PIN,
+    },
+    status: "pending",
+    paymentStatus: "pending",
+  }; 
 
-  const handlePayment = () => {
-    let productArray = []
-    for(let i of cartData && cartData?.data){
-        productArray.push({
-          "productId" : i.products[0]?.id,
-          "qty":i.products[0]?.id.toString(),
-        })
-    }
-    let data = {
-      userId: cartData && cartData.data && cartData.data[0] && cartData.data[0]?.userId ,
-      products: productArray,
-      address: {
-        locality: orderDetail?.Address,
-        city: orderDetail?.City,
-        state: orderDetail?.State,
-        country: orderDetail?.Country,
-        zipcode: orderDetail?.PIN,
-      },
-      status: "pending",
-      paymentStatus: "pending",
+  const handlePayment = async () => {
+    await dispatch(createOrder(data)); 
     };
 
-    const result = dispatch(createPayment(data));
-    return result;
-
-  };
   return (
     <div className="flex justify-end" onSubmit={handleSubmit}>
       <div className="w-11/12 pl-10">
@@ -82,15 +83,17 @@ const Shipping = ({ orderDetail,cartData, setOrderDetail }) => {
             <a href="/information">
               <LiaLessThanSolid className="text-[#1F9BE2]" />
             </a>
-            <a href="/checkbox" className="text-[#1F9BE2] ">
+            <div href="/checkbox" className="text-[#1F9BE2]" 
+            onClick={()=>setValue("1")}
+            >
               Return to information
-            </a>
+            </div>
           </div>
           <button
             className="bg-[#105989] h-16 w-44 rounded text-white font-medium text-sm"
             onClick={handlePayment}
           >
-            <h2 type="submit">Continue to payment</h2>
+            <h2 type="submit" onClick={()=>  navigate(`/order`)}>Continue to payment</h2>
           </button>
         </div>
         <Conditions />
