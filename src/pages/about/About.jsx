@@ -8,7 +8,8 @@ const About = () => {
       </p>
       <div>
         <p className="flex justify-center h-14 gap-3">
-          <h1 >O U R</h1><h1>S T O R Y</h1>
+          <h1>O U R</h1>
+          <h1>S T O R Y</h1>
         </p>
         <div className="flex justify-center w-full">
           <p className="md:w-[55%] w-11/12 text-3xl md:text-4xl text-center font-semibold pb-10">
@@ -27,7 +28,11 @@ const About = () => {
         </div>
         <div className="md:flex w-full">
           <div className="md:w-[50%]">
-            <img src="/images/about1.webp" alt="" className="md:h-screen sm:h-[350px]" />
+            <img
+              src="/images/about1.webp"
+              alt=""
+              className="md:h-screen sm:h-[350px]"
+            />
           </div>
           <div className="md:w-[50%] flex justify-center items-center">
             <div className="w-11/12 md:w-[80%] md:pt-0 pt-3">
@@ -131,7 +136,9 @@ const About = () => {
                 <p>
                   <h className="mr-3">F O U N D E R</h> S P E A K
                 </p>
-                <p className="font-semibold text-3xl md:text-4xl py-5">Parul Gulati</p>
+                <p className="font-semibold text-3xl md:text-4xl py-5">
+                  Parul Gulati
+                </p>
                 <p className="text-sm font-semibold">
                   It wasn't easy starting something on my own. Especially in a
                   category that waseither seen as a mere fashion accessory or
@@ -179,22 +186,26 @@ const About = () => {
           </div>
         </div>
         <div className="md:w-[50%] flex md:flex-col justify-center mt-10 mb-32 md:ml-12 ml-[6px]">
-        <div className="flex flex-col w-[95%] ">
-          <p className="text-[25px] md:text-[36px] font-semibold">Nish Hair Extensions</p>
-          <p className="text-[17px] py-5">
-            While the Nish Hair range has grown and expanded into creating all
-            things hair, the heart and soul of the brand remains our range of
-            premium quality human hair extensions.Each extension is made with
-            100% human hair, hand selected and stitched to perfection. We
-            believe in practicing integrity, honesty and quality in all that we
-            do, making sure that each process from sourcing to production is
-            done in a clean, safe and ethical manner. Being passionate about
-            hair and understanding the confidence it can instill, we have
-            meticulously crafted each step to ensure the extensions you get are
-            premium quality, soft and extremely long lasting.
-          </p>
-          <a href="/" className="underline underline-offset-4">Shop Now</a>
-        </div>
+          <div className="flex flex-col w-[95%] ">
+            <p className="text-[25px] md:text-[36px] font-semibold">
+              Nish Hair Extensions
+            </p>
+            <p className="text-[17px] py-5">
+              While the Nish Hair range has grown and expanded into creating all
+              things hair, the heart and soul of the brand remains our range of
+              premium quality human hair extensions.Each extension is made with
+              100% human hair, hand selected and stitched to perfection. We
+              believe in practicing integrity, honesty and quality in all that
+              we do, making sure that each process from sourcing to production
+              is done in a clean, safe and ethical manner. Being passionate
+              about hair and understanding the confidence it can instill, we
+              have meticulously crafted each step to ensure the extensions you
+              get are premium quality, soft and extremely long lasting.
+            </p>
+            <a href="/" className="underline underline-offset-4">
+              Shop Now
+            </a>
+          </div>
         </div>
       </div>
     </div>
