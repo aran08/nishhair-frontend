@@ -3,15 +3,15 @@ import React from "react";
 const About = () => {
   return (
     <div>
-      <p className="text-5xl font-medium h-[350px] flex justify-center items-center">
+      <p className="text-4xl md:text-5xl font-medium h-[200px] md:h-[350px] flex justify-center items-center">
         About Us
       </p>
       <div>
-        <p className="flex justify-center h-14">
-          <h1>O U R S T O R Y</h1>
+        <p className="flex justify-center h-14 gap-3">
+          <h1 >O U R</h1><h1>S T O R Y</h1>
         </p>
         <div className="flex justify-center w-full">
-          <p className="w-[55%] text-4xl text-center font-semibold pb-10">
+          <p className="md:w-[55%] w-11/12 text-3xl md:text-4xl text-center font-semibold pb-10">
             {" "}
             Nish Hair is a product of love. A love for beauty, quality and
             strength. A love for hair weaves and a love for all those who wear
@@ -19,18 +19,18 @@ const About = () => {
           </p>
         </div>
         <div className="flex justify-center w-full">
-          <p className="w-[57%] text-center pb-10">
+          <p className="w-11/12 md:w-[57%] text-center pb-10">
             We believe that to truly love a piece of hair extension means to
             utilize every inch of it, to empower those who spend on it and to
             honour those who craft it.
           </p>
         </div>
-        <div className="flex w-full">
-          <div className="w-[50%]">
-            <img src="/images/about1.webp" alt="" className="h-screen" />
+        <div className="md:flex w-full">
+          <div className="md:w-[50%]">
+            <img src="/images/about1.webp" alt="" className="md:h-screen sm:h-[350px]" />
           </div>
-          <div className="w-[50%] flex justify-center items-center">
-            <div className="w-[80%]">
+          <div className="md:w-[50%] flex justify-center items-center">
+            <div className="w-11/12 md:w-[80%] md:pt-0 pt-3">
               <p className="text-2xl font-semibold pb-8">
                 THE STORY OF NISH HAIR
               </p>
@@ -67,9 +67,9 @@ const About = () => {
             desires.
           </span> */}
         </div>
-        <div className="flex mb-14">
-          <div className="w-[50%] flex justify-center items-center">
-            <div className="w-[70%] ml-20">
+        <div className="md:flex mb-14">
+          <div className="md:w-[50%] flex justify-center items-center">
+            <div className="w-11/12 md:w-[70%] md:ml-20">
               <p className="text-[30px] font-medium">
                 We started NishHair with one GOAL
               </p>
@@ -93,45 +93,45 @@ const About = () => {
                 courage, compassion, and belief in our community's potential.
               </p>
               <div>
-                <button className="bg-black text-white rounded-3xl text-sm font-semibold h-[50px] w-[170px] mt-6">
+                <button className="bg-black text-white rounded-3xl text-sm font-semibold h-[50px] w-[170px] mt-6 md:mb-0 mb-3">
                   SEE COLLECTION
                 </button>
               </div>
             </div>
           </div>
-          <div className="w-[50%]">
+          <div className="md:w-[50%]">
             <img src="/images/about2.webp" alt="" />
           </div>
         </div>
-        <div className="w-full flex justify-center">
-          <div className="flex w-11/12">
-            <div className="w-[50%] relative">
+        <div className="w-full md:flex justify-center">
+          <div className="md:flex w-11/12">
+            <div className="md:w-[50%] relative">
               <img
                 src="/images/about4.webp"
                 alt=""
-                className="w-[481.56px] h-[642.5px] ml-28"
+                className="md:w-[481.56px] md:h-[642.5px] md:ml-28 md:px-0 ml-9"
               />
-              <div className="absolute top-16 right-6">
+              <div className="absolute md:top-16 md:right-6 right-0 top-5">
                 <img
                   src="/images/about3"
                   alt=""
-                  className="h-[190px] w-[250px]"
+                  className="md:h-[190px] md:w-[250px] h-[100px] w-[150px]"
                 />
               </div>
               <div className="absolute  bottom-0 left-3">
                 <img
                   src="/images/about5.webp"
                   alt=""
-                  className="h-[250px] w-[200px]"
+                  className="md:h-[250px] md:w-[200px] h-[160px] w-[120px]"
                 />
               </div>
             </div>
-            <div className="w-[50%] flex justify-center items-center">
-              <div className="flex flex-col w-10/12 pl-3">
+            <div className="md:w-[50%] flex justify-center items-center">
+              <div className="flex flex-col md:w-10/12 md:pl-3 w-11/12">
                 <p>
                   <h className="mr-3">F O U N D E R</h> S P E A K
                 </p>
-                <p className="font-semibold text-4xl py-5">Parul Gulati</p>
+                <p className="font-semibold text-3xl md:text-4xl py-5">Parul Gulati</p>
                 <p className="text-sm font-semibold">
                   It wasn't easy starting something on my own. Especially in a
                   category that waseither seen as a mere fashion accessory or
@@ -152,11 +152,11 @@ const About = () => {
           </div>
         </div>
         <div className="md:flex flex-col justify-center">
-          <div className="flex w-[93%] gap-8 ml-12">
+          <div className="md:flex w-[93%] gap-8 md:ml-12 ml-[14px] md:pt-0 pt-3">
             <img src="/images/about6.webp" alt="" />
-            <div className="w-[50%]">
+            <div className="md:w-[50%]">
               <img src="/images/about7.webp" alt="" />
-              <p className="text-[36px] font-semibold pt-8">
+              <p className="text-[25px] md:text-[36px] font-semibold pt-8">
                 Building The Nish Hair Team
               </p>
               <p className="text-[17px] mt-3 mb-6">
@@ -178,10 +178,10 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="w-[50%] flex md:flex-col justify-center mt-10 mb-32 ml-12">
+        <div className="md:w-[50%] flex md:flex-col justify-center mt-10 mb-32 md:ml-12 ml-[6px]">
         <div className="flex flex-col w-[95%] ">
-          <p className="text-[36px] font-semibold">Nish Hair Extensions</p>
-          <p className=" text-[17px] py-5">
+          <p className="text-[25px] md:text-[36px] font-semibold">Nish Hair Extensions</p>
+          <p className="text-[17px] py-5">
             While the Nish Hair range has grown and expanded into creating all
             things hair, the heart and soul of the brand remains our range of
             premium quality human hair extensions.Each extension is made with
