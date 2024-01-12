@@ -1,4 +1,3 @@
-// import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Checkbox from "@mui/material/Checkbox";
@@ -32,11 +31,10 @@ export default function Address({orderDetail,setOrderDetail,setValue}) {
       Apartment: Yup.string().max(20, 'Must be 20 characters or less').required("Required"),
       City: Yup.string().max(20, 'Must be 20 characters or less').required("Required"),
       State: Yup.string().max(20, 'Must be 20 characters or less').required("Required"),
-      PIN: Yup.number().min(6, 'Must be 6 Digit').required("Required"),
-      number: Yup.number().min(10, 'Must be 10 number').required("Required"),
+      PIN: Yup.string().min(6, 'Must be 6 Digit').required("Required"),
+      number: Yup.string().min(10, 'Must be 10 number').required("Required"),
     }),
     onSubmit: (values) => {
-      console.log("values for payment",values);
         setOrderDetail(values);
         setValue("2");
       },
@@ -235,7 +233,6 @@ export default function Address({orderDetail,setOrderDetail,setValue}) {
               </a>
               <div className="w-[180px] h-[60px] rounded text-sm font-semibold bg-blue-600 text-white flex items-center justify-center">
                 <button type="submit" 
-                // onSubmit={()=> setValue("2")}
                 > Continue to Shipping </button>
               </div>
             </div>
