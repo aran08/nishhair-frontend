@@ -22,17 +22,19 @@ const Help = () => {
       id: "4",
       src: "/images/help4.webp",
       msg: "STYLE",
-    },
+    }
+    ,
     {
       id: "5",
       src: "/images/help5.webp",
       msg: "COLOR",
-    },
-    {
-      id: "6",
-      src: "/images/help6.webp",
-      msg: "SHOP",
-    },
+    }
+    ,
+    // {
+    //   id: "6",
+    //   src: "/images/help6.webp",
+    //   msg: "SHOP",
+    // },
   ];
 
   // const videLink = [
@@ -65,25 +67,25 @@ const Help = () => {
 
   return (
     <div>
-      <div className="flex justify-center items-end h-[350px]">
-        <p className="w-[48%] text-[48px] font-bold text-center text-[#1E4E1C]">
+      <div className="flex justify-center items-end md:h-[350px] h-[200px]">
+        <p className="w-[80%] md:w-[48%] text-[35px] md:text-[48px] font-bold text-center text-[#1E4E1C]">
           What would you like your Hair extensions to do for you ?
         </p>
       </div>
-      <div className="flex justify-center items-top h-[200px] mt-3">
-        <p className="w-[30%] text-[15px] text-center font-medium">
+      <div className="flex justify-center items-top md:h-[200px] mt-3">
+        <p className="w-[80%] md:w-[30%] text-[15px] text-center font-medium">
           Find Nish Hair products based on your unique hair needs.
         </p>
       </div>
       <div>
-        <div className="flex justify-center items-center h-[80px]">
-          <p className="text-[33px] font-semibold text-center w-[50%]">
+        <div className="flex justify-center items-center md:h-[80px] pt-20">
+          <p className="text-[33px] font-semibold text-center md:w-[50%]">
             Shop by Solutions
           </p>
         </div>
-        <div className="flex gap-7 mx-11">
+        <div className="flex flex-wrap gap-3 md:gap-7 md:mx-11 md:px-0 px-4">
           {imageData.map((item) => (
-            <div key={item.id} className="">
+            <div key={item.id} className="w-[184px]"> 
               <img
                 src={item.src}
                 alt=""
@@ -91,7 +93,7 @@ const Help = () => {
               />
               <a
                 href="/"
-                className="flex justify-center h-16 font-light items-center underline underline-offset-4"
+                className="flex justify-center md:h-16 h-10 font-light items-center underline underline-offset-4"
               >
                 {item.msg}
               </a>
@@ -99,8 +101,8 @@ const Help = () => {
           ))}
         </div>
       </div>
-      <div className="flex bg-[#FFF5E9] w-full">
-        <div className="w-[50%]">
+      <div className="md:flex bg-[#FFF5E9] w-full">
+        <div className="md:w-[50%]">
           <video
             controls
             className="aspect-video w-[100%]"
@@ -109,9 +111,9 @@ const Help = () => {
             <source src="https://youtu.be/oxHLtn1eTiU?si=fcfDYCIeGOR-W9yY"/>
           </video>
         </div>
-        <div className="w-[50%] flex justify-center items-center">
-          <div className="flex-col w-[80%]">
-            <p className="text-[36px] font-semibold pb-5">
+        <div className="md:w-[50%] flex justify-center items-center">
+          <div className="flex-col md:w-[80%] w-11/12 py-3 md:py-0">
+            <p className="text-[25px] md:text-[36px] font-semibold pb-5">
               DO HAIR EXTENSIONS DAMAGE MY NATURAL HAIR?
             </p>
             <p className="text-[17px]">
@@ -126,10 +128,10 @@ const Help = () => {
           </div>
         </div>
       </div>
-      <div className="flex bg-[#FCE7F1] w-full py-16">
-        <div className="w-[50%] flex justify-center items-center">
-          <div className="flex-col w-[80%]">
-            <p className="text-[36px] font-semibold pb-5">
+      <div className="md:flex bg-[#FCE7F1] w-full py-16">
+        <div className="md:w-[50%] flex justify-center items-center">
+          <div className="flex-col md:w-[80%] w-11/12">
+            <p className="text-[25px] md:text-[36px] font-semibold pb-5">
               WHAT ARE THE CARE INSTRUCTIONS FOR MY HAIR EXTENSIONS?
             </p>
 
@@ -155,7 +157,7 @@ const Help = () => {
             </p>
           </div>
         </div>
-        <div className="w-[50%]">
+        <div className="md:w-[50%]">
           <video
             controls
             autoPlay
@@ -164,8 +166,8 @@ const Help = () => {
           />
         </div>
       </div>
-      <div className="flex bg-[#FCE7F1] w-full">
-        <div className="w-[50%]">
+      <div className="md:flex bg-[#FCE7F1] w-full">
+        <div className="md:w-[50%]">
           <video
             controls
             autoPlay
@@ -173,9 +175,9 @@ const Help = () => {
             src="https://youtu.be/q98HX_E-6W4?si=DwcuxV570lVsQwJ4"
           />
         </div>
-        <div className="w-[50%] flex justify-center items-center">
-          <div className="flex-col w-[80%]">
-            <p className="text-[36px] font-semibold pb-5">
+        <div className="md:w-[50%] flex justify-center items-center">
+          <div className="flex-col md:w-[80%] w-11/12 md:py-0 py-3">
+            <p className="text-[25px] md:text-[36px] font-semibold pb-5">
               WHAT PRODUCTS CAN BE USED TO WASH MY HAIR?
             </p>
             <p className="text-[17px]">
@@ -186,10 +188,10 @@ const Help = () => {
           </div>
         </div>
       </div>
-      <div className="flex bg-[#FCE7F1] w-full">
-        <div className="w-[50%] flex justify-center items-center">
-          <div className="flex-col w-[80%]">
-            <p className="text-[36px] font-semibold pb-5">
+      <div className="md:flex bg-[#FCE7F1] w-full">
+        <div className="md:w-[50%] flex justify-center items-center">
+          <div className="flex-col md:w-[80%] w-11/12">
+            <p className="text-[25px] md:text-[36px] font-semibold pb-5">
               ARE HAIR EXTENSIONS UNCOMFORTABLE TO WEAR?
             </p>
             <p className="text-[17px]">
@@ -203,7 +205,7 @@ const Help = () => {
             </p>
           </div>
         </div>
-        <div className="w-[50%]">
+        <div className="md:w-[50%]">
           <video
             controls
             autoPlay
@@ -212,8 +214,8 @@ const Help = () => {
           />
         </div>
       </div>
-      <div className="flex bg-[#FCE7F1] w-full">
-        <div className="w-[50%]">
+      <div className="md:flex bg-[#FCE7F1] w-full md:pt-0 pt-3">
+        <div className="md:w-[50%]">
           <video
             controls
             autoPlay
@@ -221,9 +223,9 @@ const Help = () => {
             src="https://youtu.be/OYBC6cjjYQI?si=_uEESSWWMXvW63u7"
           />
         </div>
-        <div className="w-[50%] flex justify-center items-center">
-          <div className="flex-col w-[80%]">
-            <p className="text-[36px] font-semibold pb-5">
+        <div className="md:w-[50%] flex justify-center items-center">
+          <div className="flex-col w-11/12 md:w-[80%]">
+            <p className="text-[25px] md:text-[36px] font-semibold pb-5">
               CAN I STRAIGHTEN OR STYLE MY HAIR EXTENSIONS?
             </p>
             <p className="text-[17px]">
@@ -236,10 +238,10 @@ const Help = () => {
           </div>
         </div>
       </div>
-      <div className="flex bg-[#FCE7F1] w-full">
-        <div className="w-[50%] flex justify-center items-center">
-          <div className="flex-col w-[80%]">
-            <p className="text-[36px] font-semibold pb-5">
+      <div className="md:flex bg-[#FCE7F1] w-full md:pt-0 pt-3">
+        <div className="md:w-[50%] flex justify-center items-center">
+          <div className="flex-col w-11/12 md:w-[80%]">
+            <p className="text-[25px] md:text-[36px] font-semibold pb-5">
               WHAT IS A FAUX SCALP TOPPER?
             </p>
             <p className="text-[17px]">
@@ -251,7 +253,7 @@ const Help = () => {
             </p>
           </div>
         </div>
-        <div className="w-[50%]">
+        <div className="md:w-[50%]">
           <video
             controls
             autoPlay
