@@ -1,6 +1,51 @@
 import React from "react";
+import Slider from "react-slick";
 
 const Spotted = () => {
+
+  const settings = {
+    // dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    touchMove: true,
+    swipe: true,
+
+    // nextArrow,
+    // prevArrow,
+    // arrows: true,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 2,
+          // infinite: true,
+          // dots: true
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 2,
+          // infinite: true,
+          // initialSlide: 2
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          
+        },
+      },
+    ],
+  };
+
   const imageData = [
     {
       id: 1,
@@ -64,10 +109,11 @@ const Spotted = () => {
       <p className="text-center text-2xl 2xl:text-3xl font-semibold py-8">
         Spotted In Nish Hair
       </p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-1 max-w-full">
+      <div>
+      <Slider {...settings} className="px-5">
         {imageData.map((item) => (
-          <div key={item.id} className="relative">
-            <img src={item.href} alt={item.alt}/>
+          <div key={item.id} className="relative flex gap-0">
+            <img src={item.href} alt={item.alt} className="sm:h-20 sm:w-40"/>
             <div className="absolute bottom-[12%] left-[26%] md:left-[35%] ">
               <a href={item.src} className="text-white text-sm font-semibold">
                 {item.name}
@@ -75,6 +121,7 @@ const Spotted = () => {
             </div>
           </div>
         ))}
+      </Slider>
       </div>
     </div>
   );

@@ -94,15 +94,6 @@ const Justin = () => {
 
     responsive: [
       {
-        breakpoint: 1440,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          // infinite: true,
-          // dots: true
-        },
-      },
-      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
@@ -121,7 +112,7 @@ const Justin = () => {
         },
       },
       {
-        breakpoint: 426,
+        breakpoint: 425,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -155,7 +146,6 @@ const Justin = () => {
                onMouseEnter={() => handleShowDiv(i)}
                onMouseLeave={handleHideDiv}
                 className="relative overflow-hidden"
-                
               >
                 
                  <div className='h-max overflow-y-hidden'>

@@ -104,21 +104,20 @@ function Block2() {
   },[])
 
   return (
-    <div className="w-full h-full ">
-      <div className="flex flex-wrap h-max gap-5 ml-5">
+    <div className="w-full h-full sm:mt-3">
+      <div className="flex flex-wrap h-max md:gap-5 md:ml-5 w-full justify-center">
         {products.map((item, i) => (
-          <div key={item.id} className=" w-[350px] h-max overflow-hidden" onClick={()=>  navigate(`/product/details/${item?.id}`)}>
+          <div key={item.id} className="sm:w-[200px] md:w-[350px] h-max overflow-hidden" onClick={()=>  navigate(`/product/details/${item?.id}`)}>
             <div
               onMouseEnter={() => handleShowDiv(i)}
               onMouseLeave={handleHideDiv}
               className="relative overflow-hidden"
             >
-              <div className="w-full h-[350px] overflow-y-hidden">
+              <div className=" w-[190px] h-[200px] md:w-full md:h-[350px] overflow-y-hidden ">
                 <p>
-                  <img src={item.image} alt="" className="bg-cover" />
+                  <img src={item.image} alt="" className="bg-cover sm:w-[190px] sm:h-[190px] md:w-full md:h-[350px]" />
                 </p>
               </div>
-
               <div
                 className={`absolute bottom-0 z-[999] duration-500  transition-transform left-0 bg-[#8E9491] 
                    w-full  justify-center flex items-center  text-white font-semibold text-xs h-10 

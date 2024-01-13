@@ -4,20 +4,18 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-// import Cart from "../cart/Cart";
 import Address from "../cart/Address";
 import Shipping from "../cart/Shipping";
 import ProductOrderpage from "../../components/content/ProductOrderpage";
 import { getcartData } from "../../redux/slice/cart";
 import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+import { Link } from "@mui/material";
 
 export default function Ordertab() {
   const [value, setValue] = React.useState("1");
   const [orderDetail, setOrderDetail] = React.useState();
   const [cartData, setCartData] = React.useState();
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
 
   const handleAllData = async () => {
     const res = await dispatch(getcartData());
@@ -48,7 +46,9 @@ export default function Ordertab() {
                 className="w-[170px] h-[80px]"
               />
               <div className=" flex text-sm">
-                <Tab label="Cart" />
+                <Link href="/cart" style={{ color: "black" }}>
+                  <Tab label="Cart" />
+                </Link>
                 <TabList onChange={handleChange}>
                   <Tab label="Information " value="1" />
                   <Tab label="Shipping " value="2" />
@@ -57,9 +57,6 @@ export default function Ordertab() {
               </div>
             </div>
           </Box>
-          {/* <TabPanel value="1">
-            <Cart />
-          </TabPanel> */}
           <TabPanel value="1">
             <Address
               orderDetail={orderDetail}

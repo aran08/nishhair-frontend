@@ -22,11 +22,16 @@ import Failure from "./status/Failure";
 import Order from "./pages/order/Order";
 import Cart from "./pages/cart/Cart";
 import Checkbox from "./pages/order/Ordertab";
-
+import CheckoutNav from "./utils/CheckoutNav";
+import Navbar from "./layout/navbar/Navbar";
+import Footer from './layout/footer/Footer'
 
 export default function App() {
   return (
     <BrowserRouter>
+     <CheckoutNav>
+      <Navbar/>
+     </CheckoutNav>
      <Routes>
         <Route exact  path="/" element={<Home/>}/>
         <Route exact  path="/login" element={<Login/>}/>
@@ -39,7 +44,7 @@ export default function App() {
         <Route exact  path="/cart" element={<Cart/>}/>
         <Route exact  path="/register" element={<Register/>}/>
         <Route exact  path="/profile" element={<Profile/>}/>
-        <Route exact  path="/checkbox" element={<Checkbox/>}/>
+        <Route exact  path="/checkout" element={<Checkbox/>}/>
         <Route exact  path="/shipping" element={<Shipping/>}/>
         <Route exact  path="/payment" element={<Step2/>}/>
         <Route exact  path="/top" element={<Paymenttop/>}/>
@@ -52,6 +57,9 @@ export default function App() {
         <Route exact  path="/order" element={<Order/>}/>
         <Route exact  path="*" element={<PageNotfound/>}/>
      </Routes>
+     <CheckoutNav>
+      <Footer/>
+     </CheckoutNav>
     </BrowserRouter>
   );
 }

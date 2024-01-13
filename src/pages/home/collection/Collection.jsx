@@ -53,8 +53,8 @@ const Collection = () => {
             className="border px-4 sm:px-11 md:px-8 lg:px-17 xl:px-20  pt-6 sm:pt-2 md:pt-2 lg:pt-3 xl:pt-4"
           >
             <video src={item.src} loop autoPlay />
-            <div className="h-[100px] flex items-center">
-              <p className="text-center">{item.msg}</p>
+            <div className="h-[100px] flex items-center justify-center">
+              <p>{item.msg}</p>
             </div>
           </div>
         ))}

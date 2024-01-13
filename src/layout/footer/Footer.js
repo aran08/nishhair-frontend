@@ -3,9 +3,6 @@ import { HiArrowSmUp } from "react-icons/hi";
 import {BsInstagram, BsPinterest} from "react-icons/bs";
 import {GrYoutube} from "react-icons/gr";
 
-
-
-
 const About = () => {
   return (
     <>

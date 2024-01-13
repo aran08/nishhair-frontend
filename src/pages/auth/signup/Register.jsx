@@ -29,8 +29,8 @@ const Register = () => {
   });
 
   return (
-    <div className="flex justify-center item-center md:py-6 bg-slate-300 ">
-      <div className="flex md:w-[900px] h-screen md:h-[600px] bg-[#0FB2AE] ">
+    <div className="flex justify-center h-screen item-center md:py-6 bg-slate-300 ">
+      <div className="flex md:w-[900px] bg-[#0FB2AE] ">
         <div className="px-6">
           <div className="md:pl-6">
             <p className="md:text-[34px] text-[25px] font-bold pt-20">
@@ -46,9 +46,9 @@ const Register = () => {
           </div>
         </div>
         <div className="w-[750px] bg-slate-200 flax justify-center">
-          <div className="h-screen">
+          <div className="">
           <div  onSubmit={handleSubmit}>
-          <div className="px-10 flex-col items-center flex md:h-[200px]">
+          <div className="px-10 flex-col flex md:pt-10">
             <div className="">
               <label htmlFor="name">Enter Name</label>
               <div className="pt-3 underline underline-offset-3">
@@ -60,6 +60,7 @@ const Register = () => {
                   value={values.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  className="px-3 w-full rounded-md py-2"
                 />
               </div>
             </div>
@@ -74,6 +75,7 @@ const Register = () => {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  className="px-3 w-full rounded-md py-2"
                 />
               </div>
             </div>
@@ -88,6 +90,7 @@ const Register = () => {
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  className="px-3 w-full rounded-md py-2"
                 />
               </div>
             </div>

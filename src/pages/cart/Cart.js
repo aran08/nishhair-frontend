@@ -8,10 +8,13 @@ import { GrFormSubtract } from "react-icons/gr";
 import { MdAdd } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
 import Checkbox from "@mui/material/Checkbox";
+import { Link } from "@mui/material";
 
-const Cart = () => {
+const Cart = ({ setShowDrawer }) => {
   const dispatch = useDispatch();
   const [cartData, setData] = useState();
+  const [isChecked, setIsChecked] = useState(false);
+  const [checkOut, setcheckOut] = useState(false);
   const handleAllData = async () => {
     const res = await dispatch(getcartData());
     if (res) {
@@ -36,7 +39,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    handleAllData();
+    handleAllData(setData);
   }, []);
 
   const handleDelete = (item) => {
@@ -46,13 +49,26 @@ const Cart = () => {
       console.log(error);
     }
   };
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
+
+  const handleSubmit = () => {
+    if (isChecked) {
+      setcheckOut(true);
+    } else {
+      console.log('Accept T&C to move Next Step');
+    }
+  };
 
   return (
-    <div className=" w-[380px] lg:w-[480px] z-[999999]">
+    <div className=" w-[380px] md:w-[480px] z-[999999]  ">
       <div className="flex justify-center">
         <div className="border-b-[1px] flex justify-between items-center h-[70px] w-11/12 font-medium">
           <p>CART</p>
-          <RxCross1 />
+          <RxCross1
+          onClick={()=>setShowDrawer(null)}
+          />
         </div>
       </div>
       <div>
@@ -97,7 +113,7 @@ const Cart = () => {
                         </div>
                         <div className="h-20 w-24 flex justify-center items-center font-medium text-[#0FB2AE]">
                           Rs.
-                          <p>{`${(data.productId?.price.mrp)*data.qty}`}</p>
+                          <p>{`${data.productId?.price.mrp * data.qty}`}</p>
                         </div>
                       </div>
                     ))}
@@ -117,18 +133,25 @@ const Cart = () => {
                         Tax included. Shipping calculated at checkout.
                       </p>
                       <div className="flex px-8 items-center">
-                        <Checkbox Required />
+                        <Checkbox 
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                        />
                         <p className="text-xs">
                           I agree to the shipping policy and the return and
                           exchange policy.
                         </p>
                       </div>
                       <div className="flex flex-col items-center py-8">
-                        <a href="/checkbox">
-                          <button className="border-2 bg-[#0FB2AE] text-white font-semibold rounded-3xl w-60 h-10 mb-2">
-                            CHECKOUT - RS.{data.productId.price.mrp}
-                          </button>
-                        </a>
+                      <Link href='/checkout'>
+                        <button
+                          className="border-2 bg-[#0FB2AE] text-white font-semibold rounded-3xl w-60 h-10 mb-2"
+                          onClick={handleSubmit}
+                          disabled={!isChecked}
+                        >
+                         {checkOut} CHECKOUT - RS.{data.productId.price.mrp}
+                        </button>
+                        </Link>
                         <p>VIEW CART</p>
                       </div>
                     </div>

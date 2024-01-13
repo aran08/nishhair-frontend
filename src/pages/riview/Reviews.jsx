@@ -2,9 +2,10 @@ import * as React from "react";
 import { LuMenuSquare } from "react-icons/lu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
 import Checkbox from "@mui/material/Checkbox";
-// const label = { inputProps: { "aria-label": "Checkbox demo" } };
+import Rating from "@mui/material/Rating";
+import Stack from "@mui/material/Stack";
+import ReviewGraph from "./Chart";
 
 const Reviews = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,15 +19,33 @@ const Reviews = () => {
   };
 
   return (
-    <div className="w-full flex justify-center border">
+    <div className="w-full flex justify-center border-4">
       <div className="flex-col w-[50%] flex border">
-        <div className="h-[300px] flex-col flex justify-end border">
+        <div className="h-[200px] md:h-[300px] flex-col flex justify-end border">
           <p className="ml-3 text-[20px] font-semibold text-black">
             Customer Reviews
           </p>
           <div className="flex justify-center">
-            <div className="justify-between flex w-[95%]">
-              <div>hii</div>
+            <div className="justify-between flex w-[95%] py-5">
+              <div className="flex">
+                <div className="border-r-2 flex flex-col items-center py-8 justify-center px-5">
+                  <p>4.79</p>
+                  <div>
+                    <Stack spacing={1}>
+                      <Rating
+                        name="half-rating-read"
+                        defaultValue={4.79}
+                        precision={0.1}
+                        readOnly
+                      />
+                    </Stack>
+                  </div>
+                  <p>1934 reviews</p>
+                </div>
+                <div className="h-[200px]">
+                <ReviewGraph />
+                </div>
+              </div>
               <div>
                 <div
                   id="basic-button"
@@ -46,9 +65,7 @@ const Reviews = () => {
                     "aria-labelledby": "basic-button",
                   }}
                 >
-                  <MenuItem onClick={handleClose}>
-                    Sort by <Checkbox />
-                  </MenuItem>
+                  <MenuItem>Sort by</MenuItem>
                   <MenuItem onClick={handleClose}>
                     Photo priority <Checkbox />
                   </MenuItem>

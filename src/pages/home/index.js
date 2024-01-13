@@ -13,10 +13,12 @@ import Nish from './nish/Nish'
 import Slider2 from './slider2/Slider2'
 import Index from './hair/Index'
 import Justin from './justin/index'
+import Navbar from '../../layout/navbar/Navbar'
 
 function Home() {
   return (
     <div>
+        <Navbar/>
         <SliderBlock/>
         <Banner/>
         <Justin/>
