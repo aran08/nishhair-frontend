@@ -104,7 +104,7 @@ function Block2() {
   },[])
 
   return (
-    <div className="w-full h-full sm:mt-3">
+    <div className="w-full sm:mt-3">
       <div className="flex flex-wrap h-max md:gap-5 md:ml-5 w-full justify-center">
         {products.map((item, i) => (
           <div key={item.id} className="sm:w-[200px] md:w-[350px] h-max overflow-hidden" onClick={()=>  navigate(`/product/details/${item?.id}`)}>

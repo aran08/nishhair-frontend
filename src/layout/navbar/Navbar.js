@@ -112,7 +112,7 @@ const Navbar = () => {
           <div>
             <img
               src="/images/logo.webp"
-              className="w-[117.74px] h-[80px] py-2"
+              className="md:w-[117.74px] md:h-[80px] py-2 w-24 h-16"
               alt="logo"
             />
           </div>
@@ -128,7 +128,7 @@ const Navbar = () => {
               onClick={handleClick}
             >
               {user.user.email ? (
-                <div className="uppercase rounded-full w-10 h-10 bg-red-400 text-center flex justify-center items-center ">
+                <div className="uppercase rounded-full w-9 h-9 md:mr-0 mr-5 bg-red-400 text-center flex justify-center items-center z-[9999999]">
                   {user.user.email.slice(0, 1)}
                 </div>
               ) : (
@@ -180,7 +180,6 @@ const Navbar = () => {
     {
       showShop && (
           <div onMouseLeave={()=>setShop(false)} className="z-[999999]">
-
             <Shopdrawer/>
           </div>
       )
