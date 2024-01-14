@@ -5,8 +5,8 @@ import AddIcon from '@mui/icons-material/Add';
 const Loved = () => {
   const [image, setImage] = useState("#000");
   return (
-    <div className="w-full flex justify-center items-center border pb-20">
-      <div className="w-11/12 border">
+    <div className="w-full flex justify-center items-center pb-20">
+      <div className="w-11/12">
         <h1 className="text-[22px] md:text-3xl font-bold text-center pt-16 pb-6 ">
           Most loved product of the month
         </h1>
@@ -58,8 +58,8 @@ const Loved = () => {
               <div className="border w-28 h-12 text-center border-[#0FB2AE] rounded-3xl flex justify-center items-center">
                 <button className="flex gap-2"><RemoveIcon/>{1}<AddIcon/></button>
               </div>
-              <div className="ml-2">
-                <button type="button" className="btn btn4 font-medium text-sm px-[140px]">
+              <div className="ml-2 md:w-[380px] w-[158px]">
+                <button type="button" className="btn btn4 font-medium text-sm">
                   ADD TO CART
                 </button>
               </div>
