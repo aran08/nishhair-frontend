@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
 
 const Loved = () => {
   const [image, setImage] = useState("#000");
@@ -52,17 +54,17 @@ const Loved = () => {
                 <div className="bg-[#5C4033] w-5 h-5 rounded-full"></div>
               </div>
             </div>
-            <div className="flex py-3 mx-2 md:mx-0">
+            <div className="flex py-3 md:mx-0">
               <div className="border w-28 h-12 text-center border-[#0FB2AE] rounded-3xl flex justify-center items-center">
-                <button>Button</button>
+                <button className="flex gap-2"><RemoveIcon/>{1}<AddIcon/></button>
               </div>
-              <div className="w-[95%] ml-2">
-                <button type="button" className="btn btn4">
-                  PRE-ORDER
+              <div className="ml-2">
+                <button type="button" className="btn btn4 font-medium text-sm px-[140px]">
+                  ADD TO CART
                 </button>
               </div>
             </div>
-            <div className="h-12 ml-2 flex pr-6 justify-center items-center font-semibold rounded-3xl pl-2 w-[96%] bg-[#0FB2AE] text-white">
+            <div className="h-12 flex pr-6 justify-center items-center font-semibold rounded-3xl pl-2 w-[96%] bg-[#0FB2AE] text-white">
               <button className="my-1">
                 BUY IT NOW
               </button>
