@@ -1,38 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Shop = () => {
+
+  const imageData = [
+    {
+      id: 1,
+      ima: "/images/shop1.webp",
+    },
+    {
+      id: 2,
+      ima: "/images/shop2.4.webp",
+    },
+    {
+      id: 3,
+      ima: "/images/shop3.3.webp",
+    },
+    {
+      id: 4,
+      ima: "/images/shop4.4.webp",
+    }
+  ];
+
+  const [identity,setIdentity] = useState(null)
+
+  const handleShowDiv = (i) => {
+    setIdentity(i+1)
+    
+  };
+  const handleHideDiv = (i) => {
+    setIdentity(null)
+  };
+
   return (
     <div className=" px-5 md:px-14">
-      <h1 className="text-2xl md:text-3xl font-semibold mb-2 mt-8">SHOP BY BRANDS</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 2xl:gap-7 w-full border">
-        <div>
-        <div className="h-[200px] lg:h-[332.2px] w-[200px] md:w-[332.2px] relative">
-          <img src="/images/shop1.webp" alt="" />
-          {/* <img src="/images/shop1.1.webp" alt="" /> */}
-          {/* <img src="/images/shop1.2.webp" alt="" /> */}
-          {/* <img src="/images/shop1.3.webp" alt="" /> */}
-        </div>
-        {/* <div className="absolute">
-              QUICK VIEW
-        </div> */}
-        </div>
-        <div className="h-[200px] lg:h-[332.2px] w-[200px] md:w-[332.2px]">
-          <img src="/images/shop2.4.webp" alt="" className="h-[332.2px] w-[332.2px]"/>
-          {/* <img src="/images/shop2.1.webp" alt="" /> */}
-          {/* <img src="/images/shop2.2.webp" alt="" /> */}
-          {/*<img src="/images/shop2.3.webp" alt="" />*/}
-        </div>
-        <div className="h-[200px] mr-2 lg:h-[332.2px] w-[200px] md:w-[332.2px]">
-          <img src="/images/shop3.3.webp" alt="" className="md:h-[332.2px] h-[200px] w-[182px] md:w-[332.2px]"/>
-          {/* <img src="/images/shop3.1.webp" alt="" /> */}
-          {/* <img src="/images/shop3.2.webp" alt="" /> */}
-        </div>
-        <div className="h-[200px] lg:h-[332.2px] w-[200px] md:w-[332.2px]">
-          {/* <img src="/images/shop4.1.webp" alt="" /> */}
-          {/* <img src="/images/shop4.2.webp" alt="" /> */}
-          {/* <img src="/images/shop4.3.webp" alt="" /> */}
-          <img src="/images/shop4.4.webp" alt="" className="lg:h-[332.2px] h-[200px] w-[182px] md:w-[332.2px]" />
-        </div>
+      <h1 className="text-[24px] md:text-[36px] font-semibold mb-2 mt-8">SHOP BY BRANDS</h1>
+      <div className="flex">
+      {imageData.map((item,i) => (
+            <div 
+            key={item.id}
+           
+                 className=" h-max overflow-hidden  px-3">
+              <div
+               onMouseEnter={() => handleShowDiv(i)}
+               onMouseLeave={handleHideDiv}
+                className="relative overflow-hidden"
+              >
+                
+                 <div className='h-max overflow-y-hidden'>
+                    <img src={item.ima} alt="" className='md:h-[380px] md:w-[360px] h-20 w-20' />
+                  </div>
+              
+
+                <div
+                  className={`absolute bottom-0 z-[999] duration-500  transition-transform left-0 bg-[#8E9491] 
+                   w-full  justify-center flex items-center  text-white font-semibold text-xs h-10 
+                  ${
+                     item.id !== identity ? 
+                     "translate-y-12"
+                      : "translate-y-0 " 
+                  }
+                  `}
+                >
+                  {" "}
+                  QUICK VIEW{" "}
+                </div>
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );

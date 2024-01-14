@@ -82,7 +82,7 @@ const Navbar = () => {
             onClick={() => setShow(true)}
           >
             <div className="hover:underline hover:text-black">
-              <BsList />
+              <BsList className="h-8 w-8"/>
             </div>
           </div>
           <Drawer anchor="bottom" open={show} onClose={() => setShow(false)}>

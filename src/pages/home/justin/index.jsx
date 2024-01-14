@@ -135,7 +135,7 @@ const Justin = () => {
     <div className="w-full flex justify-center gap-4 items-center border-b-[1px] my-10">
       
       <div className="w-11/12">
-      <p className="text-4xl font-semibold ml-3 mb-6">JUST IN</p>
+      <p className="text-[24px] md:text-4xl font-semibold ml-3 mb-6">JUST IN</p>
         <Slider {...settings}>
         {imageData.map((item,i) => (
             <div 
@@ -168,8 +168,8 @@ const Justin = () => {
                 </div>
               </div>
               <div>
-                <p className="text-center font-semibold ">{item.msg}</p>
-                <p className="text-[#14B4B0] text-center font-semibold">
+                <p className="text-[25px] text-base text-center font-semibold ">{item.msg}</p>
+                <p className="text-[#14B4B0] text-[25px] text-base text-center font-semibold">
                   {item.pr}
                 </p>
               </div>
@@ -182,33 +182,3 @@ const Justin = () => {
 };
 
 export default Justin;
-/* 
-1
-            <div>
-              <img src="/images/quickview2.webp" alt="" />
-            </div>
-            <div>
-              <img src="/images/quickview3.webp" alt="" />
-            </div>
-2
-            <div>
-              <img src="/images/quickview2.2.webp" alt="" />
-            </div>
-            <div>
-              <img src="/images/quickview2.3.webp" alt="" />
-            </div>
-3
-            <div>
-              <img src="/images/quickview3.2.webp" alt="" />
-            </div>
-4
-            <div>
-              <img src="/images/quickview4.2.webp" alt="" />
-            </div>
-            <div>
-              <img src="/images/quickview4.3.webp" alt="" />
-            </div>
-            
-5           
-            <h1 className="text-3xl font-medium py-6"> JUST IN</h1>
-*/

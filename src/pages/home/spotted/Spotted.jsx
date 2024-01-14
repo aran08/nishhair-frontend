@@ -7,7 +7,7 @@ const Spotted = () => {
     // dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 3,
     touchMove: true,
     swipe: true,
@@ -112,8 +112,8 @@ const Spotted = () => {
       <div>
       <Slider {...settings} className="px-5">
         {imageData.map((item) => (
-          <div key={item.id} className="relative flex gap-0">
-            <img src={item.href} alt={item.alt} className="sm:h-20 sm:w-40"/>
+          <div key={item.id} className="relative flex gap-2">
+            <img src={item.href} alt={item.alt} className="h-20 w-40 md:h-fit md:w-fit"/>
             <div className="absolute bottom-[12%] left-[26%] md:left-[35%] ">
               <a href={item.src} className="text-white text-sm font-semibold">
                 {item.name}

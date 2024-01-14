@@ -5,11 +5,11 @@ const Loved = () => {
   return (
     <div className="w-full flex justify-center items-center border pb-20">
       <div className="w-11/12 border">
-        <h1 className="text-[22px] 2xl:text-3xl font-bold text-center pt-16 pb-6 ">
+        <h1 className="text-[22px] md:text-3xl font-bold text-center pt-16 pb-6 ">
           Most loved product of the month
         </h1>
-        <div className="xl:flex">
-          <div className="overflow-y-auto overflow-x-hidden max-h-[800px] scroll-hide 2xl:pl-6 2xl:pr-12 2xl:w-[60%]">
+        <div className="md:flex">
+          <div className="overflow-y-auto overflow-x-hidden max-h-[800px] scroll-hide md:pl-6 md:pr-12 md:w-[60%]">
             {image === "#000" ? (
               <img src="/images/lovedblack.webp" alt="" />
             ) : (
@@ -17,7 +17,7 @@ const Loved = () => {
             )}
           </div>
 
-          <div className="2xl:w-[40%]">
+          <div className="md:w-[40%]">
             <p className="font-medium text-2xl py-2">
               HAIR LINE POWDER | NISH HAIR
             </p>
@@ -52,7 +52,7 @@ const Loved = () => {
                 <div className="bg-[#5C4033] w-5 h-5 rounded-full"></div>
               </div>
             </div>
-            <div className="flex py-3 mx-2 2xl:mx-0">
+            <div className="flex py-3 mx-2 md:mx-0">
               <div className="border w-28 h-12 text-center border-[#0FB2AE] rounded-3xl flex justify-center items-center">
                 <button>Button</button>
               </div>
