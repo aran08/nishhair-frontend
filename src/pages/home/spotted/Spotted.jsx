@@ -54,50 +54,50 @@ const Spotted = () => {
       src: "https://www.instagram.com/iamhumaq/?hl=en",
       alt:"Apple1"
     },
+    // {
+    //   id: 2,
+    //   name: "Komal pandey",
+    //   href: "/images/Komal.webp",
+    //   src: "https://www.instagram.com/komalpandeyofficial/?hl=en",
+    //   alt:"Apple2"
+    // },
     {
       id: 2,
-      name: "Komal pandey",
-      href: "/images/Komal.webp",
-      src: "https://www.instagram.com/komalpandeyofficial/?hl=en",
-      alt:"Apple2"
-    },
-    {
-      id: 3,
       name: "Barkha Singh",
       href: "/images/Barkha.webp",
       src: "https://www.instagram.com/barkhasingh0308/",
       alt:"Apple3"
     },
     {
-      id: 4,
+      id: 3,
       name: "Ahsaas Channa",
       href: "/images/Ahsaas.webp",
       src: "https://www.instagram.com/ahsaassy_/?hl=en",
       alt:"Apple4"
     },
     {
-      id: 5,
+      id: 4,
       name: "Srishti Shrivastava",
       href: "/images/Srishti.webp",
       src: "https://www.instagram.com/srishti.shrivastava21/?hl=en",
       alt:"Apple5"
     },
     {
-      id: 6,
+      id: 5,
       name: "Sobhita Dhulipala",
       href: "/images/Sobhita.webp",
       src: "https://www.instagram.com/sobhitad/?igshid=YmMyMTA2M2Y%3D",
       alt:"Apple6"
     },
     {
-      id: 7,
+      id: 6,
       name: "Juhi Godambe",
       href: "/images/Juhi.webp",
       src: "https://www.instagram.com/juhigodambe/?hl=en",
       alt:"Apple7"
     },
     {
-      id: 8,
+      id: 7,
       name: "Simran Natekar",
       href: "/images/Simran.webp",
       src: "https://www.instagram.com/simran.natekar/?hl=en",
