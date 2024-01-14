@@ -113,7 +113,7 @@ const Spotted = () => {
       <Slider {...settings} className="px-5">
         {imageData.map((item) => (
           <div key={item.id} className="relative flex gap-2">
-            <img src={item.href} alt={item.alt} className="h-20 w-40 md:h-fit md:w-fit"/>
+            <img src={item.href} alt={item.alt} className="h-40 w-40 md:h-fit md:w-fit"/>
             <div className="absolute bottom-[12%] left-[26%] md:left-[35%] ">
               <a href={item.src} className="text-white text-sm font-semibold">
                 {item.name}
