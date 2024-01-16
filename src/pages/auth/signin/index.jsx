@@ -69,7 +69,7 @@ const Login = () => {
     <div className="bg-[#0FB2AE] h-screen flex justify-center items-center ">
       <div className="h-[85%] md:w-[23.33%] bg-white rounded-lg ">
         <div className="h-[15%] flex items-center justify-center">
-          <h className="text-black text-[36px] font-extrabold text-center">
+          <h className="text-black text-[25px] md:text-[36px] font-extrabold text-center">
             Login
           </h>
         </div>
@@ -109,7 +109,7 @@ const Login = () => {
                 Forgot password?
               </a>
             </p>
-            <div className="flex justify-center align-middle py-10">
+            <div className="flex justify-center align-middle py-5 md:py-10">
               <button
                 type="submit"
                 className="text-white text-sm bg-[#0FB2AE] rounded-3xl w-[85%] h-8 text-center"
@@ -130,7 +130,7 @@ const Login = () => {
                 <BsGoogle />
               </div>
             </div>
-            <p className="text-center pt-20">Or Sign Up Using </p>
+            <p className="text-center pt-10 md:pt-20">Or Sign Up Using </p>
             <p className="text-center font-bold ">
               <a href="/register" className="hover:text-blue-600">Sign Up</a>
             </p>
