@@ -69,9 +69,9 @@ const Login = () => {
     <div className="bg-[#0FB2AE] h-screen flex justify-center items-center ">
       <div className="h-[75%] md:h-[85%] md:w-[23.33%] bg-white rounded-lg ">
         <div className="h-[15%] flex items-center justify-center">
-          <h className="text-black text-[25px] md:text-[36px] font-extrabold text-center">
+          <p className="text-black text-[25px] md:text-[36px] font-extrabold text-center">
             Login
-          </h>
+          </p>
         </div>
           <div>
             <div className="px-10">

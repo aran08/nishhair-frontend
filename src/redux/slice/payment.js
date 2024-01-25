@@ -14,18 +14,18 @@ const slice = createSlice({
 
 export const { reducer } = slice;
 
-// export const createPayment = (data) => async () => {
-//   try {
-//     const result = await paymentApi.createPayment(data);
-//     if (result) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+export const createPayment = (data) => async () => {
+  try {
+    const result = await paymentApi.createPayment(data);
+    if (result) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const getPayment = () => async () => {
   try {
@@ -38,16 +38,16 @@ export const getPayment = () => async () => {
   }
 };
 
-export const updatePayment = (data) => async (dispatch) => {
-  try {
-    const result = await paymentApi.updatePayment(data);
-    console.log(result);
-    if (result) {
-      await dispatch(slice.actions.updatePayment(result));
-      return true;
-    }
-    return false;
-  } catch (error) {
-    console.log(error);
-  }
-};
+// export const updatePayment = (data) => async (dispatch) => {
+//   try {
+//     const result = await paymentApi.updatePayment(data);
+//     console.log(result);
+//     if (result) {
+//       await dispatch(slice.actions.updatePayment(result));
+//       return true;
+//     }
+//     return false;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };

@@ -80,7 +80,7 @@ export default function CustomizedRadios() {
               />
               <p>Standard</p>
             </div>
-            <p className="">Free</p>
+            <p>Free</p>
           </div>
           <div className="flex justify-between px-2 pb-3">
             <div className="flex">

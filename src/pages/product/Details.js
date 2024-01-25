@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {AiFillFacebook} from "react-icons/ai";
-import {BsTwitter,BsPinterest, BsBox} from "react-icons/bs"
+import {BsTwitter,BsPinterest} from "react-icons/bs"
 import { GrFormSubtract } from "react-icons/gr";
 import { MdAdd } from "react-icons/md";
 import {useDispatch} from "react-redux"
@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { createData } from "../../redux/slice/cart";
 import { createSlice } from "@reduxjs/toolkit";
 import { getUser } from "../../redux/slice/auth";
-import {Box, styled} from "@mui/material"
+import {Box} from "@mui/material"
 
 // import { authApi } from "../../mooks/auth";
 import Slider from "react-slick";
