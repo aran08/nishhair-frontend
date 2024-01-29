@@ -66,7 +66,7 @@ const Reviews = () => {
                    </div>
                    <div className="flex gap-1 items-center pl-2">
                       <p className="w-[23%]">1 Star</p>
-                      <ValueComponent value={5} maxValue={2000}/>
+                      <ValueComponent value={1} maxValue={2000}/>
                       <p className="pr-3">1</p>
                    </div>
                 </div>
