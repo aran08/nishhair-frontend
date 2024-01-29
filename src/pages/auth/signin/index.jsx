@@ -37,6 +37,7 @@ const Login = () => {
   const [password,setPassword] = useState("")
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  //login management
   const handleSubmit =async () => {
     if(!email && !password){
       return true;
@@ -46,9 +47,11 @@ const Login = () => {
       "username":email,
       "password":password,
     }
-    
+    //sending data for verification
     const result = await dispatch(login(data))
     
+
+    //if sent successfully, then notification system
     if(result){
       setemail("")
       setPassword("")
@@ -90,7 +93,7 @@ const Login = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="lastName">Password</label>
+                <label htmlFor="password">Password</label>
                 <div className="py-3">
                   <input
                     id="password"

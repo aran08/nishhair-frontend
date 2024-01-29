@@ -15,6 +15,7 @@ const Cart = ({ setShowDrawer }) => {
   const [cartData, setData] = useState();
   const [isChecked, setIsChecked] = useState(false);
   const [checkOut, setcheckOut] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
   const handleAllData = async () => {
     const res = await dispatch(getcartData());
     if (res) {
@@ -24,23 +25,59 @@ const Cart = ({ setShowDrawer }) => {
     }
   };
   const handleSub = (id) => {
-    try {
-      // dispatch(updateCart(id));
-    } catch (error) {
-      console.log(error);
-    }
+    setData((prevData) => ({
+      data: prevData.data.map((item) => ({
+        ...item,
+        products: item.products.map((data) => {
+          if (data.productId === id) {
+            return {
+              ...data,
+              qty: Math.max(1, data.qty - 1), // Ensure quantity doesn't go below 0
+            };
+          }
+          return data;
+        }),
+      })),
+    }));
   };
+  
   const handleAdd = (id) => {
-    try {
-      // dispatch(updateCart(id));
-    } catch (error) {
-      console.log(error);
-    }
+    setData((prevData) => ({
+      data: prevData.data.map((item) => ({
+        ...item,
+        products: item.products.map((data) => {
+          if (data.productId === id) {
+            return {
+              ...data,
+              qty: data.qty + 1,
+            };
+          }
+          return data;
+        }),
+      })),
+    }));
   };
+  
 
   useEffect(() => {
     handleAllData(setData);
   }, []);
+
+  useEffect(() => {
+    if (cartData && cartData?.data.length > 0) {
+      const totalPrice = cartData.data.reduce(
+        (acc, item) =>
+          acc +
+          item.products.reduce(
+            (productAcc, data) =>
+              productAcc + data.productId.price.mrp * data.qty,
+            0
+          ),
+        0
+      );
+      setTotalPrice(totalPrice);
+    }
+  }, [cartData]);
 
   const handleDelete = (item) => {
     try {
@@ -98,11 +135,11 @@ const Cart = ({ setShowDrawer }) => {
                           <div className="flex gap-3 items-center pt-4">
                             <div className="border-2 border-black flex gap-2 items-center rounded-2xl px-2 py-1">
                               <GrFormSubtract
-                                onClick={() => handleSub(data, data.qty - 1)}
+                                onClick={() => handleSub(data.productId)}
                               />
                               {data.qty}
                               <MdAdd
-                                onClick={() => handleAdd(data, data.qty + 1)}
+                                onClick={() => handleAdd(data.productId)}
                               />
                             </div>
                             <RiDeleteBin5Line
@@ -118,44 +155,6 @@ const Cart = ({ setShowDrawer }) => {
                       </div>
                     ))}
                 </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between px-6 text-sm font-semibold h-10 border-y-2 items-center">
-                  <p>ADD ORDER NOTE</p>
-                  <IoMdAdd />
-                </div>
-                {item &&
-                  item?.products &&
-                  item?.products.map((data) => (
-                    <div key={data}>
-                      <p className="text-sm font-medium px-6 pt-5">
-                        Tax included. Shipping calculated at checkout.
-                      </p>
-                      <div className="flex px-8 items-center">
-                        <Checkbox 
-                        checked={isChecked}
-                        onChange={handleCheckboxChange}
-                        />
-                        <p className="text-xs">
-                          I agree to the shipping policy and the return and
-                          exchange policy.
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-center py-8">
-                      <Link href='/checkout'>
-                        <button
-                          className="border-2 bg-[#0FB2AE] text-white font-semibold rounded-3xl w-60 h-10 mb-2"
-                          onClick={handleSubmit}
-                          disabled={!isChecked}
-                        >
-                         {checkOut} CHECKOUT - RS.{data.productId.price.mrp}
-                        </button>
-                        </Link>
-                        <p>VIEW CART</p>
-                      </div>
-                    </div>
-                  ))}
               </div>
             </>
           ))
@@ -174,6 +173,41 @@ const Cart = ({ setShowDrawer }) => {
           </div>
         )}
       </div>
+      {cartData && cartData?.data.length > 0 && (
+        <div>
+          <div className="flex justify-between px-6 text-sm font-semibold h-10 border-y-2 items-center">
+            <p>ADD ORDER NOTE</p>
+            <IoMdAdd />
+          </div>
+          <div>
+            <p className="text-sm font-medium px-6 pt-5">
+              Tax included. Shipping calculated at checkout.
+            </p>
+            <div className="flex px-8 items-center">
+              <Checkbox 
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              />
+              <p className="text-xs">
+                I agree to the shipping policy and the return and
+                exchange policy.
+              </p>
+            </div>
+            <div className="flex flex-col items-center py-8">
+              <Link href='/checkout'>
+                <button
+                  className="border-2 bg-[#0FB2AE] text-white font-semibold rounded-3xl w-60 h-10 mb-2"
+                  onClick={handleSubmit}
+                  disabled={!isChecked}
+                >
+                  {checkOut} CHECKOUT - RS.{totalPrice}
+                </button>
+              </Link>
+              <p>VIEW CART</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

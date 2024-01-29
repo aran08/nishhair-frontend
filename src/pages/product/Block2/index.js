@@ -113,9 +113,9 @@ function Block2() {
               onMouseLeave={handleHideDiv}
               className="relative overflow-hidden"
             >
-              <div className=" w-[190px] h-[200px] md:w-full md:h-[350px] overflow-y-hidden ">
+              <div className=" w-[190px] h-[200px] md:w-full md:h-[400px] overflow-y-hidden ">
                 <p>
-                  <img src={item.image} alt="" className="bg-cover sm:w-[190px] sm:h-[190px] md:w-full md:h-[350px]" />
+                  <img src={item.image} alt="" className="bg-cover sm:w-[190px] sm:h-[190px] md:w-full md:h-[400px]" />
                 </p>
               </div>
               <div
