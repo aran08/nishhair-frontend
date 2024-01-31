@@ -42,6 +42,18 @@ export const { reducer } = slice;
     }
 };
 
+export const getcartProduct = (id) => async(dispatch) => {
+  try {
+     const result = await cartApi.getcartProduct(id);
+     console.log("getting result inside slice carr",result)
+   if(result){
+     return result.data;
+   }
+  } catch (error) {
+     console.log(error);
+  }
+}
+
 export const deletecartData = (id) => async (dispatch) => {
   try {
     const result = await cartApi.deletecartData(id);

@@ -51,7 +51,7 @@ const Navbar = () => {
         }`}
       >
         <div className="w-11/12 flex justify-between items-center text-center my-0 py-0 z-50 group h-full space-x-10">
-          <div className="sm:w-[55%] w-[80%] flex justify-between items-center group-hover:text-[#2dd4bf] h-full">
+          <div className="w-[55%] flex justify-between items-center group-hover:text-[#2dd4bf] h-full">
             <div className="md:flex md:gap-5 font-medium hidden md:text-[8px] md:text-base">
               <a href="/PageNot" className="hover:underline hover:text-black">
                 HOME
@@ -180,7 +180,7 @@ const Navbar = () => {
       </nav>
 
       {showShop && (
-        <div onMouseLeave={() => setShop(false)} className="z-[999999]">
+        <div onMouseLeave={() => setShop(false)} className="absolute top-10  w-full z-[99999]">
           <Shopdrawer />
         </div>
       )}

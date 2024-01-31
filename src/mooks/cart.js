@@ -60,6 +60,42 @@ class CartApi {
     }
   }
 
+  async getcartProduct(id) {
+    try {
+
+        let data ={
+            "query":{},
+            "options": {
+              "collation": "",
+              "sort": {"name":1},
+              "populate": "",
+              "projection": "",
+              "lean": false,
+              "leanWithId": true,
+              "page": 1,
+              "limit": 1,
+              "pagination": true,
+              "useEstimatedCount": false,
+              "useCustomCountFn": false,
+              "forceCountFn": false,
+              "read": {},
+              "options": {}
+            },
+            "isCountOnly": false
+          }
+
+        const response = await axios.get(
+            `${process.env.REACT_APP_BASE_URL}/userapp/cart/get/${id}`,
+            data,
+          );
+          if (response) {
+            return response.data;
+          }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
   async deletecartData(id) {
     const response = await axios.delete(
       `${process.env.REACT_APP_BASE_URL}/userapp/cart/soft-delete/${id}`,
